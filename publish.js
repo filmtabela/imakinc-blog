@@ -1,6 +1,5 @@
 const https = require('https');
 const fs = require('fs');
-const path = require('path');
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
 
@@ -27,9 +26,7 @@ const TOPICS = [
 const PUBLISHED_FILE = 'published.json';
 
 function getPublished() {
-  if (fs.existsSync(PUBLISHED_FILE)) {
-    return JSON.parse(fs.readFileSync(PUBLISHED_FILE, 'utf8'));
-  }
+  if (fs.existsSync(PUBLISHED_FILE)) return JSON.parse(fs.readFileSync(PUBLISHED_FILE, 'utf8'));
   return [];
 }
 
@@ -64,8 +61,20 @@ function callClaude(prompt) {
       res.on('end', () => {
         try {
           const parsed = JSON.parse(data);
+          console.log('API status:', res.statusCode);
+          if (parsed.error) {
+            reject(new Error('API error: ' + parsed.error.message));
+            return;
+          }
+          if (!parsed.content || !parsed.content[0]) {
+            console.log('Full response:', JSON.stringify(parsed).substring(0, 500));
+            reject(new Error('No content in response'));
+            return;
+          }
           resolve(parsed.content[0].text);
-        } catch(e) { reject(e); }
+        } catch(e) {
+          reject(new Error('Parse error: ' + e.message + ' Raw: ' + data.substring(0, 200)));
+        }
       });
     });
     req.on('error', reject);
@@ -76,11 +85,7 @@ function callClaude(prompt) {
 
 function buildArticlePage(topic, content, dateStr, articleSlug) {
   const { title, intro, sections, cta } = content;
-  const sectionsHTML = sections.map(s => `
-    <h2>${s.heading}</h2>
-    <p>${s.body}</p>
-  `).join('');
-
+  const sectionsHTML = sections.map(s => `<h2>${s.heading}</h2><p>${s.body}</p>`).join('');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,17 +108,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,16,30,0.97);backdrop-fil
 .nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:0.42rem 1rem!important;border-radius:7px!important;font-weight:700!important;}
 .mob-cta{display:none;gap:0.5rem;}
 @media(max-width:960px){.nav-links{display:none;}.mob-cta{display:flex;}}
-.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.82rem 1.8rem;border-radius:9px;font-weight:700;font-size:0.88rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.82rem 1.8rem;border-radius:9px;font-weight:700;font-size:0.88rem;text-decoration:none;transition:all 0.2s;}
 .btn-blue{background:var(--blue);color:var(--white);}.btn-blue:hover{background:var(--blue-b);}
 .btn-out{background:transparent;color:var(--white);border:1px solid var(--border);}.btn-out:hover{border-color:var(--blue-b);color:var(--blue-b);}
 .btn-sm{padding:0.45rem 0.9rem;font-size:0.8rem;border-radius:7px;}
 .article-hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 100%);padding:4rem 2rem 3rem;border-bottom:1px solid var(--border);}
 .article-hero .container{max-width:800px;margin:0 auto;}
 .article-date{font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-b);margin-bottom:0.8rem;}
-.article-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-0.025em;margin-bottom:1rem;}
-.article-hero .intro{font-size:1rem;color:var(--muted);line-height:1.7;max-width:680px;}
+.article-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--white);line-height:1.12;margin-bottom:1rem;}
+.article-hero .intro{font-size:1rem;color:var(--muted);line-height:1.7;}
 .article-body{max-width:800px;margin:0 auto;padding:3rem 2rem;}
-.article-body h2{font-size:1.3rem;font-weight:800;color:var(--white);margin:2rem 0 0.7rem;letter-spacing:-0.02em;}
+.article-body h2{font-size:1.3rem;font-weight:800;color:var(--white);margin:2rem 0 0.7rem;}
 .article-body p{color:var(--muted);line-height:1.8;margin-bottom:1rem;font-size:0.95rem;}
 .cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:18px;padding:2.5rem;text-align:center;margin:3rem 0;}
 .cta-box h3{font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:0.6rem;}
@@ -144,7 +149,6 @@ footer p{font-size:0.75rem;color:var(--muted);}
     </div>
   </div>
 </nav>
-
 <div class="article-hero">
   <div class="container">
     <div class="article-date">${dateStr}</div>
@@ -152,7 +156,6 @@ footer p{font-size:0.75rem;color:var(--muted);}
     <p class="intro">${intro}</p>
   </div>
 </div>
-
 <div class="article-body">
   ${sectionsHTML}
   <div class="cta-box">
@@ -164,7 +167,6 @@ footer p{font-size:0.75rem;color:var(--muted);}
     </div>
   </div>
 </div>
-
 <footer><p>&copy; 2026 IMAK Overseas Education, Hyderabad. All rights reserved.</p></footer>
 </body>
 </html>`;
@@ -177,21 +179,18 @@ function buildBlogIndex(articles) {
       <h3>${a.title}</h3>
       <p>${a.intro}</p>
       <span class="read-more">Read more →</span>
-    </a>
-  `).join('');
-
+    </a>`).join('');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Study Abroad Blog | IMAK Overseas Education</title>
-<meta name="description" content="Latest guides and advice for Indian students planning to study abroad. MBBS, undergraduate, postgraduate options in 20+ countries.">
+<meta name="description" content="Latest guides for Indian students planning to study abroad. MBBS, undergraduate, postgraduate in 20+ countries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#08101E;--navy-mid:#0D1B2E;--navy-card:#102038;--navy-light:#163050;--border:rgba(25,124,192,0.16);--blue:#197CC0;--blue-b:#2290D8;--white:#FFFFFF;--text:#D8E8F4;--muted:#7DA4BF;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;}
+*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;}
 nav{position:sticky;top:0;z-index:100;background:rgba(8,16,30,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:110px;}
 .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
@@ -259,8 +258,7 @@ footer p{font-size:0.75rem;color:var(--muted);}
 }
 
 async function main() {
-  console.log("API KEY present:", !!ANTHROPIC_API_KEY);
-  console.log("API KEY length:", ANTHROPIC_API_KEY ? ANTHROPIC_API_KEY.length : 0);
+  console.log('API KEY present:', !!ANTHROPIC_API_KEY);
   const published = getPublished();
   const remaining = TOPICS.filter(t => !published.find(p => p.topic === t));
 
@@ -277,46 +275,48 @@ async function main() {
 
   const prompt = `Write a detailed, SEO-optimized study abroad guide for Indian students on the topic: "${topic}"
 
-Return ONLY valid JSON in this exact format, no markdown, no explanation:
+Return ONLY valid JSON, no markdown backticks, no explanation:
 {
-  "title": "SEO-optimized title (max 65 chars)",
-  "intro": "2-3 sentence introduction (max 200 chars)",
+  "title": "SEO title under 65 chars",
+  "intro": "2-3 sentence intro under 200 chars",
   "sections": [
-    {"heading": "Section heading", "body": "2-3 paragraph body text"},
-    {"heading": "Section heading", "body": "2-3 paragraph body text"},
-    {"heading": "Section heading", "body": "2-3 paragraph body text"},
-    {"heading": "Section heading", "body": "2-3 paragraph body text"}
+    {"heading": "heading", "body": "2-3 sentences"},
+    {"heading": "heading", "body": "2-3 sentences"},
+    {"heading": "heading", "body": "2-3 sentences"},
+    {"heading": "heading", "body": "2-3 sentences"}
   ],
-  "cta": "One sentence encouraging free counselling call"
+  "cta": "One sentence CTA for free counselling"
 }
 
 Write for Indian students. Mention costs in INR. Be specific and practical.`;
 
   const raw = await callClaude(prompt);
+  console.log('Raw response preview:', raw.substring(0, 100));
+
   let content;
   try {
     content = JSON.parse(raw.replace(/```json|```/g, '').trim());
   } catch(e) {
     console.error('JSON parse error:', e.message);
+    console.error('Raw:', raw.substring(0, 300));
     process.exit(1);
   }
 
-  // Ensure blog directory exists
   if (!fs.existsSync('blog')) fs.mkdirSync('blog');
 
-  // Write article
   const articleHTML = buildArticlePage(topic, content, dateStr, articleSlug);
   fs.writeFileSync(`blog/${articleSlug}.html`, articleHTML);
   console.log('Written: blog/' + articleSlug + '.html');
 
-  // Update published list
   published.unshift({ topic, slug: articleSlug, title: content.title, intro: content.intro, date: dateStr });
   savePublished(published);
 
-  // Rebuild blog index
   const indexHTML = buildBlogIndex(published);
   fs.writeFileSync('blog.html', indexHTML);
   console.log('Rebuilt: blog.html');
 }
 
-main().catch(console.error);
+main().catch(err => {
+  console.error('Fatal error:', err.message);
+  process.exit(1);
+});
