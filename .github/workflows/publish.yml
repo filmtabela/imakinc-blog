@@ -1,0 +1,38 @@
+name: Daily Blog Publish
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # 9am IST daily
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node publish.js
+
+      - name: Deploy to Hostinger via SSH
+        env:
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+        run: |
+          sudo apt-get install -y sshpass
+          # Sync blog folder and blog.html to Hostinger
+          sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no -P 65002 -r blog blog.html u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/
+          echo "Deploy complete"
+
+      - name: Commit published.json
+        run: |
+          git config user.email "filmtabela@gmail.com"
+          git config user.name "filmtabela"
+          git add published.json blog/ blog.html
+          git diff --cached --quiet || git commit -m "Published: $(date '+%Y-%m-%d')"
+          git push
