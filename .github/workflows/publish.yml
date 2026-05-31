@@ -29,33 +29,38 @@ jobs:
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
         run: |
-          # Create blog dir on server if not exists
+          # Create blog dir on server
           sshpass -p "$SSH_PASS" ssh \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             -p 65002 \
             u114546712@145.79.209.26 \
             "mkdir -p /home/u114546712/domains/imakinc.com/public_html/blog"
-          # Copy blog folder and index
-          sshpass -p "$SSH_PASS" scp \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -P 65002 \
-            -r blog/* blog.html \
-            u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog/
-          # Copy blog.html index to public_html root
-          sshpass -p "$SSH_PASS" scp \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -P 65002 \
-            blog.html \
-            u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog.html
+          # Copy article files if blog dir has content
+          if [ "$(ls -A blog 2>/dev/null)" ]; then
+            sshpass -p "$SSH_PASS" scp \
+              -o StrictHostKeyChecking=no \
+              -o UserKnownHostsFile=/dev/null \
+              -P 65002 \
+              blog/* \
+              u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog/
+          fi
+          # Copy blog index
+          if [ -f blog.html ]; then
+            sshpass -p "$SSH_PASS" scp \
+              -o StrictHostKeyChecking=no \
+              -o UserKnownHostsFile=/dev/null \
+              -P 65002 \
+              blog.html \
+              u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog.html
+          fi
           echo "Deploy complete"
 
       - name: Commit and push
         run: |
           git config user.email "filmtabela@gmail.com"
           git config user.name "filmtabela"
-          git add published.json blog/ blog.html
+          mkdir -p blog
+          git add published.json blog.html blog/ || true
           git diff --cached --quiet || git commit -m "Published: $(date '+%Y-%m-%d')"
           git push

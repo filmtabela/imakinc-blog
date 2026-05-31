@@ -259,6 +259,8 @@ footer p{font-size:0.75rem;color:var(--muted);}
 }
 
 async function main() {
+  console.log("API KEY present:", !!ANTHROPIC_API_KEY);
+  console.log("API KEY length:", ANTHROPIC_API_KEY ? ANTHROPIC_API_KEY.length : 0);
   const published = getPublished();
   const remaining = TOPICS.filter(t => !published.find(p => p.topic === t));
 
