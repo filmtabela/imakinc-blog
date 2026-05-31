@@ -5,6 +5,9 @@ on:
     - cron: '0 3 * * *'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -29,14 +32,12 @@ jobs:
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
         run: |
-          # Create blog dir on server
           sshpass -p "$SSH_PASS" ssh \
             -o StrictHostKeyChecking=no \
             -o UserKnownHostsFile=/dev/null \
             -p 65002 \
             u114546712@145.79.209.26 \
             "mkdir -p /home/u114546712/domains/imakinc.com/public_html/blog"
-          # Copy article files if blog dir has content
           if [ "$(ls -A blog 2>/dev/null)" ]; then
             sshpass -p "$SSH_PASS" scp \
               -o StrictHostKeyChecking=no \
@@ -45,7 +46,6 @@ jobs:
               blog/* \
               u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog/
           fi
-          # Copy blog index
           if [ -f blog.html ]; then
             sshpass -p "$SSH_PASS" scp \
               -o StrictHostKeyChecking=no \
