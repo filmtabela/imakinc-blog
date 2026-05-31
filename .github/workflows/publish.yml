@@ -2,7 +2,7 @@ name: Daily Blog Publish
 
 on:
   schedule:
-    - cron: '0 3 * * *'  # 9am IST daily
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 jobs:
@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: actions/setup-node@v4
         with:
@@ -20,16 +22,22 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: node publish.js
 
-      - name: Deploy to Hostinger via SSH
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy blog to Hostinger
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
         run: |
-          sudo apt-get install -y sshpass
-          # Sync blog folder and blog.html to Hostinger
-          sshpass -p "$SSH_PASS" scp -o StrictHostKeyChecking=no -P 65002 -r blog blog.html u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/
+          sshpass -p "$SSH_PASS" scp \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            -P 65002 \
+            -r blog blog.html \
+            u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/
           echo "Deploy complete"
 
-      - name: Commit published.json
+      - name: Commit and push published.json
         run: |
           git config user.email "filmtabela@gmail.com"
           git config user.name "filmtabela"
