@@ -1,64 +1,31 @@
-name: Daily Blog Publish
+name: Batch Publish - IMAK
 on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: '30 2 * * *'   # 8:00 AM IST — queue batch
+    - cron: '30 14 * * *'  # 8:00 PM IST — retrieve & publish
   workflow_dispatch:
-permissions:
-  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - name: Generate article
+          node-version: '20'
+      - name: Install dependencies
+        run: npm install
+      - name: Run publish script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: node publish.js
-      - name: Install sshpass
-        run: sudo apt-get install -y sshpass
-      - name: Deploy blog to Hostinger
-        env:
-          SSH_PASS: ${{ secrets.SSH_PASS }}
-        run: |
-          sshpass -p "$SSH_PASS" ssh \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -p 65002 \
-            u114546712@145.79.209.26 \
-            "mkdir -p /home/u114546712/domains/imakinc.com/public_html/blog"
-          if [ "$(ls -A blog 2>/dev/null)" ]; then
-            sshpass -p "$SSH_PASS" scp \
-              -o StrictHostKeyChecking=no \
-              -o UserKnownHostsFile=/dev/null \
-              -P 65002 \
-              blog/* \
-              u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog/
-          fi
-          if [ -f blog.html ]; then
-            sshpass -p "$SSH_PASS" scp \
-              -o StrictHostKeyChecking=no \
-              -o UserKnownHostsFile=/dev/null \
-              -P 65002 \
-              blog.html \
-              u114546712@145.79.209.26:/home/u114546712/domains/imakinc.com/public_html/blog.html
-          fi
-          sshpass -p "$SSH_PASS" ssh \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -p 65002 \
-            u114546712@145.79.209.26 \
-            "cp ~/domains/imakinc.com/public_html/blog.html ~/domains/imakinc.com/public_html/blog/index.html"
-          echo "Deploy complete"
       - name: Commit and push
         run: |
+          git config user.name "IMAK Publisher Bot"
           git config user.email "filmtabela@gmail.com"
-          git config user.name "filmtabela"
-          mkdir -p blog
-          git add published.json blog.html blog/ || true
-          git diff --cached --quiet || git commit -m "Published: $(date '+%Y-%m-%d')"
+          git add .
+          git diff --staged --quiet || git commit -m "Batch publish: $(date +'%Y-%m-%d %H:%M')"
           git push
