@@ -47,16 +47,16 @@ async function generateBlogPost(topic) {
     messages: [
       {
         role: 'user',
-        content: `Write a comprehensive blog post about: "${topic}". 
-                
-Format as JSON with the following structure:
+        content: `Write a comprehensive blog post about: "${topic}".
+
+Output ONLY valid JSON in this exact format, with no markdown fences, no extra text:
 {
-  "title": "Post Title",
-  "excerpt": "Brief 1-2 sentence summary",
-  "content": "Full blog post content in HTML (use <p>, <h2>, <ul>, <li> tags)"
+  "title": "Post Title Here",
+  "excerpt": "One to two sentence summary here",
+  "content": "<p>Blog content in HTML tags. Use &quot; for quotes, &amp; for ampersands. No line breaks in values.</p>"
 }
 
-Only output valid JSON, no markdown or extra text.`
+Ensure all quotes inside strings use &quot; and all ampersands use &amp;. Do not include any text outside the JSON object.`
       }
     ]
   });
@@ -94,9 +94,21 @@ Only output valid JSON, no markdown or extra text.`
         }
       }
       
-      const post = JSON.parse(jsonStr);
-      if (post.title && post.content) {
-        return post;
+      try {
+        const post = JSON.parse(jsonStr);
+        
+        // Decode HTML entities in strings
+        if (post.title) post.title = post.title.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+        if (post.excerpt) post.excerpt = post.excerpt.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+        if (post.content) post.content = post.content.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
+        
+        if (post.title && post.content) {
+          return post;
+        }
+      } catch (parseErr) {
+        console.error('JSON parse error:', parseErr.message);
+        console.error('Attempted JSON:', jsonStr.substring(0, 200));
+        throw new Error(`Failed to parse JSON: ${parseErr.message}`);
       }
     }
     throw new Error('Invalid response format from Claude API');
