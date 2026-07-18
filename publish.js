@@ -49,14 +49,19 @@ async function generateBlogPost(topic) {
         role: 'user',
         content: `Write a comprehensive blog post about: "${topic}".
 
-Output ONLY valid JSON in this exact format, with no markdown fences, no extra text:
-{
-  "title": "Post Title Here",
-  "excerpt": "One to two sentence summary here",
-  "content": "<p>Blog content in HTML tags. Use &quot; for quotes, &amp; for ampersands. No line breaks in values.</p>"
-}
+Output in this exact format with three fields separated by |||:
 
-Ensure all quotes inside strings use &quot; and all ampersands use &amp;. Do not include any text outside the JSON object.`
+TITLE|||EXCERPT|||CONTENT
+
+Where:
+- TITLE: Single sentence title (no pipes, no newlines)
+- EXCERPT: One-two sentence summary (no pipes, no newlines)
+- CONTENT: Full HTML blog post (can include <p>, <h2>, <ul>, <li> tags, but NO ||| symbols)
+
+Example:
+Study Abroad Benefits|||Discover why studying abroad transforms careers|||<p>Studying abroad opens doors...</p>
+
+Generate only the three fields separated by |||, nothing else.`
       }
     ]
   });
@@ -81,35 +86,20 @@ Ensure all quotes inside strings use &quot; and all ampersands use &amp;. Do not
     if (parsed.content && parsed.content[0] && parsed.content[0].text) {
       let text = parsed.content[0].text.trim();
       
-      // Strip markdown code fences if present
-      text = text.replace(/^```json\s*/i, '').replace(/\s*```$/, '').trim();
+      // Split by ||| delimiter
+      const parts = text.split('|||');
       
-      // Try to extract JSON object
-      let jsonStr = text;
-      if (text.includes('{')) {
-        const startIdx = text.indexOf('{');
-        const endIdx = text.lastIndexOf('}');
-        if (startIdx !== -1 && endIdx !== -1 && endIdx > startIdx) {
-          jsonStr = text.substring(startIdx, endIdx + 1);
+      if (parts.length >= 3) {
+        const title = parts[0].trim();
+        const excerpt = parts[1].trim();
+        const content = parts[2].trim();
+        
+        if (title && excerpt && content) {
+          return { title, excerpt, content };
         }
       }
       
-      try {
-        const post = JSON.parse(jsonStr);
-        
-        // Decode HTML entities in strings
-        if (post.title) post.title = post.title.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
-        if (post.excerpt) post.excerpt = post.excerpt.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
-        if (post.content) post.content = post.content.replace(/&quot;/g, '"').replace(/&amp;/g, '&');
-        
-        if (post.title && post.content) {
-          return post;
-        }
-      } catch (parseErr) {
-        console.error('JSON parse error:', parseErr.message);
-        console.error('Attempted JSON:', jsonStr.substring(0, 200));
-        throw new Error(`Failed to parse JSON: ${parseErr.message}`);
-      }
+      throw new Error(`Invalid response format. Expected 3 fields separated by |||. Got: ${text.substring(0, 200)}`);
     }
     throw new Error('Invalid response format from Claude API');
   } catch (err) {
