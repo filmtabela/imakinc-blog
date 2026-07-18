@@ -79,7 +79,10 @@ Only output valid JSON, no markdown or extra text.`
     const parsed = JSON.parse(response);
     
     if (parsed.content && parsed.content[0] && parsed.content[0].text) {
-      const text = parsed.content[0].text.trim();
+      let text = parsed.content[0].text.trim();
+      
+      // Strip markdown code fences if present
+      text = text.replace(/^```json\s*/i, '').replace(/\s*```$/, '').trim();
       
       // Try to extract JSON object
       let jsonStr = text;
