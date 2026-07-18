@@ -6,17 +6,11 @@ const path = require('path');
 
 // Configuration
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const PEXELS_API_KEY = process.env.PEXELS_API_KEY;
 const BLOG_DIR = path.join(__dirname, 'blog');
 const OUTPUT_FILE = path.join(__dirname, 'published.json');
 
 if (!ANTHROPIC_API_KEY) {
   console.error('Error: ANTHROPIC_API_KEY not set');
-  process.exit(1);
-}
-
-if (!PEXELS_API_KEY) {
-  console.error('Error: PEXELS_API_KEY not set');
   process.exit(1);
 }
 
@@ -97,44 +91,6 @@ Only output valid JSON, no markdown or extra text.`
   }
 }
 
-// Fetch image from Pexels
-async function fetchPexelsImage(keyword) {
-  const options = {
-    hostname: 'api.pexels.com',
-    port: 443,
-    path: `/v1/search?query=${encodeURIComponent(keyword)}&per_page=1`,
-    method: 'GET',
-    headers: {
-      'Authorization': PEXELS_API_KEY
-    }
-  };
-
-  try {
-    const response = await httpsRequest(options);
-    const data = JSON.parse(response);
-    
-    if (data.photos && data.photos.length > 0) {
-      return {
-        url: data.photos[0].src.medium,
-        photographer: data.photos[0].photographer,
-        source: 'Pexels'
-      };
-    }
-    return {
-      url: `https://via.placeholder.com/800x400?text=${encodeURIComponent(keyword)}`,
-      photographer: 'Placeholder',
-      source: 'Placeholder'
-    };
-  } catch (err) {
-    console.error('Error fetching image:', err.message);
-    return {
-      url: `https://via.placeholder.com/800x400?text=${encodeURIComponent(keyword)}`,
-      photographer: 'Placeholder',
-      source: 'Placeholder'
-    };
-  }
-}
-
 // Main publish function
 async function publish() {
   const topics = [
@@ -153,10 +109,6 @@ async function publish() {
     const post = await generateBlogPost(randomTopic);
     console.log(`Generated post: ${post.title}`);
 
-    // Fetch image
-    const image = await fetchPexelsImage(randomTopic);
-    console.log(`Fetched image from ${image.source}`);
-
     // Create filename
     const slug = post.title
       .toLowerCase()
@@ -174,17 +126,16 @@ async function publish() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${post.title}</title>
   <style>
-    body { font-family: Georgia, serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-    h1 { color: #08101E; }
-    img { max-width: 100%; height: auto; margin: 20px 0; }
-    .meta { color: #666; font-size: 0.9em; }
+    body { font-family: Georgia, serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
+    h1 { color: #08101E; border-bottom: 2px solid #197CC0; padding-bottom: 10px; }
+    h2 { color: #197CC0; margin-top: 20px; }
+    .meta { color: #666; font-size: 0.9em; font-style: italic; }
+    p { text-align: justify; }
   </style>
 </head>
 <body>
   <h1>${post.title}</h1>
   <p class="meta">Published: ${new Date().toLocaleDateString()}</p>
-  <img src="${image.url}" alt="${post.title}">
-  <p class="meta">Photo by ${image.photographer} via ${image.source}</p>
   <div>${post.content}</div>
 </body>
 </html>`;
@@ -203,7 +154,6 @@ async function publish() {
       title: post.title,
       slug: filename,
       date: new Date().toISOString(),
-      image: image.url,
       excerpt: post.excerpt
     });
 
