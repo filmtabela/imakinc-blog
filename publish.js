@@ -79,12 +79,24 @@ Only output valid JSON, no markdown or extra text.`
     const parsed = JSON.parse(response);
     
     if (parsed.content && parsed.content[0] && parsed.content[0].text) {
-      const jsonMatch = parsed.content[0].text.match(/\{[\s\S]*\}/);
-      if (jsonMatch) {
-        return JSON.parse(jsonMatch[0]);
+      const text = parsed.content[0].text.trim();
+      
+      // Try to extract JSON object
+      let jsonStr = text;
+      if (text.includes('{')) {
+        const startIdx = text.indexOf('{');
+        const endIdx = text.lastIndexOf('}');
+        if (startIdx !== -1 && endIdx !== -1 && endIdx > startIdx) {
+          jsonStr = text.substring(startIdx, endIdx + 1);
+        }
+      }
+      
+      const post = JSON.parse(jsonStr);
+      if (post.title && post.content) {
+        return post;
       }
     }
-    throw new Error('Invalid response from Claude API');
+    throw new Error('Invalid response format from Claude API');
   } catch (err) {
     console.error('Error generating blog post:', err.message);
     throw err;
