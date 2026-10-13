@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine On
+# 301s for retired/mistyped URLs (added 2026-10-13)
+RewriteRule ^find-my-university(\.html)?/?$ /university-finder.html [R=301,L]
+RewriteRule ^about(\.html)?/?$ /about-us.html [R=301,L]
+RewriteRule ^contact(\.html)?/?$ /contact-us.html [R=301,L]
+RewriteRule ^privacy-policy(\.html)?/?$ /terms-and-conditions.html [R=301,L]
+RewriteRule ^study-in-philippines(\.html)?/?$ /mbbs-in-philippines.html [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
