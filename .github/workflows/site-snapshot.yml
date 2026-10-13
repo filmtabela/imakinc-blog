@@ -1,0 +1,43 @@
+name: Site snapshot (read-only)
+# Copies the live HTML pages (no PHP, no config) from Hostinger into the
+# site-snapshot branch so changes can be reviewed before anything is edited.
+on:
+  push:
+    branches: [main]
+    paths: ['ops/snapshot-trigger.txt']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull HTML from Hostinger
+        env:
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+        run: |
+          sudo apt-get install -y sshpass >/dev/null
+          OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+          R=u114546712@145.79.209.26
+          sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R 'ls ~/domains' > domains.txt
+          cat domains.txt
+          mkdir -p snap
+          for d in imakinc.com ftech.co.in; do
+            sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R \
+              "cd ~/domains/$d/public_html 2>/dev/null && find . -type f \( -name '*.html' -o -name '*.htm' -o -name '.htaccess' -o -name 'robots.txt' -o -name 'sitemap*.xml' \) -not -path './blog/*' -print0 | tar --null -czf - -T -" \
+              > snap/$d.tgz || echo "no $d"
+            mkdir -p snap/$d && tar -xzf snap/$d.tgz -C snap/$d && rm snap/$d.tgz
+            sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R "cd ~/domains/$d/public_html 2>/dev/null && find . -type f | sed 's|^./||' | sort" > snap/$d.filelist.txt || true
+          done
+          cp domains.txt snap/
+      - name: Commit to site-snapshot branch
+        run: |
+          cd snap
+          git init -q -b site-snapshot
+          git config user.name "Site Snapshot Bot"
+          git config user.email "filmtabela@gmail.com"
+          git add -A
+          git commit -q -m "Snapshot $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" site-snapshot
