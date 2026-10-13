@@ -7,14 +7,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark: #0D0D14;
-    --darker: #08080F;
-    --blue: #1A6FFF;
-    --blue-dim: #1A6FFF22;
-    --white: #F0F0F8;
-    --muted: #7070A0;
-    --border: #1E1E30;
-    --card: #111120;
+    --dark: #111312;
+    --darker: #0A0B0A;
+    --blue: #10B981;
+    --blue-dim: #10B98122;
+    --white: #F2F5F3;
+    --muted: #8A968F;
+    --border: #232825;
+    --card: #151816;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -22,20 +22,20 @@
   h1, h2, h3, h4, nav, .logo { font-family: 'Syne', sans-serif; }
 
   /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(8,8,15,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(10,11,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; cursor: pointer; }
   .logo span { color: var(--blue); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.02em; }
   .nav-links a:hover { color: var(--white); }
   .nav-cta { background: var(--blue); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600 !important; }
-  .nav-cta:hover { background: #2277FF; color: #fff !important; }
+  .nav-cta:hover { background: #34D399; color: #fff !important; }
 
   /* HERO */
   .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, #1A6FFF18 0%, transparent 70%); pointer-events: none; }
-  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, #1A6FFF0A 0%, transparent 70%); pointer-events: none; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--blue-dim); border: 1px solid #1A6FFF44; color: var(--blue); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; width: fit-content; }
+  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, #10B98118 0%, transparent 70%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, #10B9810A 0%, transparent 70%); pointer-events: none; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--blue-dim); border: 1px solid #10B98144; color: var(--blue); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; width: fit-content; }
   .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
   h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; max-width: 800px; margin-bottom: 1.5rem; }
@@ -43,15 +43,15 @@
   .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
   .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
   .btn-primary { background: var(--blue); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.02em; transition: all 0.2s; border: none; cursor: pointer; }
-  .btn-primary:hover { background: #2277FF; transform: translateY(-1px); }
+  .btn-primary:hover { background: #34D399; transform: translateY(-1px); }
   .btn-ghost { color: var(--muted); padding: 0.85rem 2rem; border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; border: 1px solid var(--border); }
-  .btn-ghost:hover { color: var(--white); border-color: #2E2E50; }
+  .btn-ghost:hover { color: var(--white); border-color: #2E3530; }
 
   /* TRUST BAR */
   .trust-bar { padding: 2rem 4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--dark); display: flex; align-items: center; gap: 3rem; overflow: hidden; }
   .trust-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; font-weight: 600; }
   .trust-items { display: flex; gap: 3rem; align-items: center; }
-  .trust-item { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; color: #3A3A60; white-space: nowrap; letter-spacing: 0.05em; }
+  .trust-item { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; color: #3B443E; white-space: nowrap; letter-spacing: 0.05em; }
 
   /* SECTIONS */
   .section { padding: 6rem 4rem; }
@@ -62,19 +62,19 @@
   /* SERVICES */
   .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
   .service-card { background: var(--card); padding: 2.5rem; transition: background 0.3s; position: relative; }
-  .service-card:hover { background: #13132A; }
-  .service-icon { width: 48px; height: 48px; background: var(--blue-dim); border: 1px solid #1A6FFF33; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; }
+  .service-card:hover { background: #171B19; }
+  .service-icon { width: 48px; height: 48px; background: var(--blue-dim); border: 1px solid #10B98133; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; }
   .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
   .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
   .pricing-row { display: flex; gap: 1rem; flex-wrap: wrap; }
   .price-tag { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 100px; letter-spacing: 0.02em; }
-  .price-setup { background: #1A1A2E; color: var(--white); border: 1px solid var(--border); }
-  .price-monthly { background: var(--blue-dim); color: var(--blue); border: 1px solid #1A6FFF33; }
+  .price-setup { background: #1D221F; color: var(--white); border: 1px solid var(--border); }
+  .price-monthly { background: var(--blue-dim); color: var(--blue); border: 1px solid #10B98133; }
 
   /* HOW */
   .how-section { background: var(--dark); padding: 6rem 4rem; }
   .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3.5rem; }
-  .step-num { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: #1A1A30; line-height: 1; margin-bottom: 1rem; }
+  .step-num { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: #1D221F; line-height: 1; margin-bottom: 1rem; }
   .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
   .step p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
 
@@ -105,7 +105,7 @@
 
   /* CTA */
   .cta-section { padding: 6rem 4rem; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, #1A6FFF12 0%, transparent 70%); pointer-events: none; }
+  .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, #10B98112 0%, transparent 70%); pointer-events: none; }
   .cta-section h2 { max-width: 600px; margin: 0 auto 1.5rem; }
   .cta-section p { color: var(--muted); max-width: 440px; margin: 0 auto 2.5rem; }
 
@@ -323,7 +323,7 @@
       <p>Covering AI in healthcare, retail, logistics, legal, agriculture, manufacturing, and more — all written for Indian SMEs.</p>
       <span class="blog-read">Browse All Articles →</span>
     </a>
-    <a href="blog/" class="blog-card fade-up" style="border-style:dashed;border-color:#1A6FFF44;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:180px;">
+    <a href="blog/" class="blog-card fade-up" style="border-style:dashed;border-color:#10B98144;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:180px;">
       <span style="font-size:2rem;margin-bottom:1rem;">📰</span>
       <h3 style="color:var(--blue);">30+ AI Topics Covered</h3>
       <p>Hospitals, law firms, schools, retailers — see how AI is transforming every sector in India.</p>
@@ -350,10 +350,6 @@
       <div class="contact-detail">
         <span>📍</span>
         <span>East Marredpally, Secunderabad, Hyderabad</span>
-      </div>
-      <div class="contact-detail">
-        <span>📞</span>
-        <span><a href="tel:+919000171849" style="color:var(--muted);text-decoration:none;">+91 90001 71849</a></span>
       </div>
       <div class="contact-detail">
         <span>☎️</span>
