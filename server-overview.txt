@@ -1,0 +1,60 @@
+Warning: Permanently added '[145.79.209.26]:65002' (ED25519) to the list of known hosts.
+== /home/u114546712/domains/ftech.co.in/public_html
+total 88
+drwxr-xr-x 3 u114546712 o1009345517  4096 Oct 13 17:17 .
+drwxr-xr-x 3 u114546712 o1009345517  4096 May 18 16:15 ..
+drwxr-xr-x 2 u114546712 o1009345517  4096 Oct 13 17:17 blog
+-rw-r--r-- 1 u114546712 o1009345517 22292 Oct 13 17:17 blog.html
+-rw-r--r-- 1 u114546712 o1009345517 16369 May 18 16:15 default.php
+-rw-r--r-- 1 u114546712 o1009345517 23253 Oct 13 17:17 index.html
+== /home/u114546712/domains/imakinc.com/public_html
+total 816
+drwxr-xr-x 4 u114546712 o1009345517  4096 Oct 13 17:17 .
+drwxr-xr-x 3 u114546712 o1009345517  4096 May 17 04:52 ..
+-rw-r--r-- 1 u114546712 o1009345517 22892 Oct 13 17:17 about-us.html
+drwxr-xr-x 2 u114546712 o1009345517  4096 Oct 13 17:18 blog
+-rw-r--r-- 1 u114546712 o1009345517 15746 Oct 13 17:18 blog.html
+-rw-r--r-- 1 u114546712 o1009345517 20561 Oct 13 17:17 book-an-appointment.html
+-rw-r--r-- 1 u114546712 o1009345517 21217 Oct 13 17:17 contact-us.html
+-rw-r--r-- 1 u114546712 o1009345517 36134 Oct 13 17:17 course-finder.html
+-rw-r--r-- 1 u114546712 o1009345517  9177 Oct 13 17:17 decision-report.html
+-rw-r--r-- 1 u114546712 o1009345517 16369 May 16 11:47 default.php
+-rw-r--r-- 1 u114546712 o1009345517  1560 Oct 13 17:17 delivery-policy.html
+-rw-r--r-- 1 u114546712 o1009345517 24908 Oct 13 17:17 destinations.html
+-rw-r--r-- 1 u114546712 o1009345517    53 Jul  6 08:06 google06fa30208496f561.html
+-rw-r--r-- 1 u114546712 o1009345517   551 Oct 13 13:55 .htaccess
+drwxr-xr-x 2 u114546712 o1009345517  4096 May 31 18:25 images
+-rw-r--r-- 1 u114546712 o1009345517  1993 May 18 13:20 imak-float-contact.js
+-rw-r--r-- 1 u114546712 o1009345517 34788 Oct 13 17:17 index.html
+-rw-r--r-- 1 u114546712 o1009345517     0 Jun  1 19:22 index.html.bak
+-rw-r--r-- 1 u114546712 o1009345517 28799 Oct 13 17:17 mbbs-in-georgia.html
+-rw-r--r-- 1 u114546712 o1009345517 29333 Oct 13 17:17 mbbs-in-kyrgyzstan.html
+-rw-r--r-- 1 u114546712 o1009345517 26251 Oct 13 17:17 mbbs-in-philippines.html
+-rw-r--r-- 1 u114546712 o1009345517 22030 Oct 13 17:17 mbbs-in-russia.html
+-rw-r--r-- 1 u114546712 o1009345517 22666 Oct 13 17:17 our-services.html
+-rw-r--r-- 1 u114546712 o1009345517  2057 Oct 13 17:17 refund-policy.html
+-rw-r--r-- 1 u114546712 o1009345517  1172 May 17 08:59 sitemap.xml
+-rw-r--r-- 1 u114546712 o1009345517 30615 Oct 13 17:17 study-in-australia.html
+-rw-r--r-- 1 u114546712 o1009345517 30990 Oct 13 17:17 study-in-canada.html
+-rw-r--r-- 1 u114546712 o1009345517 26464 Oct 13 17:17 study-in-dubai.html
+-rw-r--r-- 1 u114546712 o1009345517 32260 Oct 13 17:17 study-in-germany.html
+-rw-r--r-- 1 u114546712 o1009345517 25891 Oct 13 17:17 study-in-malaysia.html
+-rw-r--r-- 1 u114546712 o1009345517 25462 Oct 13 17:17 study-in-malta.html
+-rw-r--r-- 1 u114546712 o1009345517 26179 Oct 13 17:17 study-in-singapore.html
+-rw-r--r-- 1 u114546712 o1009345517 26706 Oct 13 17:17 study-in-uk.html
+-rw-r--r-- 1 u114546712 o1009345517  2006 Oct 13 17:17 terms-and-conditions.html
+-rw-r--r-- 1 u114546712 o1009345517 38344 Oct 13 17:17 university-finder.html
+-rw-r--r-- 1 u114546712 o1009345517  3813 May 18 12:40 whatsapp-leads.js
+== /home/u114546712/domains/imranahmedkhan.com/public_html
+total 2808
+drwxr-xr-x 2 u114546712 o1009345517    4096 Jul 13 09:53 .
+drwxr-xr-x 3 u114546712 o1009345517    4096 May 20 17:05 ..
+-rw-r--r-- 1 u114546712 o1009345517   16369 May 20 17:06 default.php.bak
+-rw-r--r-- 1 u114546712 o1009345517   31946 Jul 13 09:45 index.html
+-rw-r--r-- 1 u114546712 o1009345517  124523 May 20 17:14 photo-about.jpg
+-rw-r--r-- 1 u114546712 o1009345517  239972 May 20 17:14 photo-g2.jpg
+-rw-r--r-- 1 u114546712 o1009345517  152196 May 20 17:14 photo-g3.jpg
+-rw-r--r-- 1 u114546712 o1009345517  165286 May 20 17:14 photo-g5.jpg
+-rw-r--r-- 1 u114546712 o1009345517  128555 Jul 13 09:47 photo-hero.jpg
+-rw-r--r-- 1 u114546712 o1009345517 1958893 Jun 16 13:51 photo-media.jpg
+

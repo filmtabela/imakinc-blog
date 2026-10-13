@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Book Free Counselling Call | IMAK Overseas Education | Hyderabad</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08101E;--navy-mid:#0D1B2E;--navy-card:#102038;--navy-light:#163050;
+  --border:rgba(25,124,192,0.16);--blue:#197CC0;--blue-b:#2290D8;--blue-g:rgba(25,124,192,0.11);
+  --white:#FFFFFF;--text:#D8E8F4;--muted:#7DA4BF;--green:#22C55E;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,16,30,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-logo{display:flex;align-items:center;gap:0.55rem;text-decoration:none;flex-shrink:0;}
+.nav-logo svg{width:32px;height:32px;}
+.logo-text{font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;line-height:1;}
+.logo-text span{color:var(--blue-b);}
+.nav-links{display:flex;align-items:center;gap:0.1rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.42rem 0.65rem;border-radius:6px;transition:all 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--navy-light);}
+.nav-call{color:var(--blue-b)!important;font-weight:700!important;}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:0.42rem 1rem!important;border-radius:7px!important;font-weight:700!important;}
+.nav-cta:hover{background:var(--blue-b)!important;}
+.mob-cta{display:none;gap:0.5rem;}
+@media(max-width:960px){.nav-links{display:none;}.mob-cta{display:flex;}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 60%,#091525 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(25,124,192,0.12) 0%,transparent 70%);}
+.badge{position:relative;display:inline-flex;align-items:center;gap:0.45rem;background:rgba(25,124,192,0.1);border:1px solid rgba(25,124,192,0.28);color:var(--blue-b);font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.06em;text-transform:uppercase;}
+.hero h1{position:relative;font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-0.03em;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.hero p{position:relative;font-size:1rem;color:var(--muted);max-width:560px;margin:0 auto 2rem;}
+
+/* LAYOUT */
+section{padding:5rem 2rem;}.container{max-width:1200px;margin:0 auto;}
+.s-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-b);margin-bottom:0.55rem;}
+.s-title{font-size:clamp(1.75rem,4vw,2.6rem);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-0.025em;margin-bottom:0.9rem;}
+.s-title em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.s-sub{font-size:0.95rem;color:var(--muted);max-width:560px;line-height:1.7;}
+.alt{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* CARD */
+.card{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;transition:border-color 0.22s,transform 0.22s;}
+.card:hover{border-color:rgba(25,124,192,0.38);transform:translateY(-3px);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.82rem 1.8rem;border-radius:9px;font-weight:700;font-size:0.88rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-blue{background:var(--blue);color:var(--white);}.btn-blue:hover{background:var(--blue-b);transform:translateY(-2px);}
+.btn-out{background:transparent;color:var(--white);border:1px solid var(--border);}.btn-out:hover{border-color:var(--blue-b);color:var(--blue-b);}
+.btn-sm{padding:0.45rem 0.9rem;font-size:0.8rem;border-radius:7px;}
+.btn-group{display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+/* TAG */
+.tag{font-size:0.66rem;font-weight:700;padding:0.2rem 0.52rem;border-radius:100px;background:rgba(25,124,192,0.09);border:1px solid rgba(25,124,192,0.2);color:var(--blue-b);letter-spacing:0.03em;}
+
+/* FORM */
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:0.7rem;font-weight:700;color:var(--muted);margin-bottom:0.42rem;letter-spacing:0.06em;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(8,16,30,0.8);border:1px solid var(--border);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;padding:0.72rem 0.95rem;border-radius:9px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue-b);box-shadow:0 0 0 3px rgba(25,124,192,0.09);}
+.fg select option{background:var(--navy-mid);}
+.fg textarea{resize:vertical;min-height:100px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:500px){.f-row{grid-template-columns:1fr;}}
+
+/* CTA BOX */
+.cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:18px;padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;max-width:680px;margin:0 auto;}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,var(--blue-g) 0%,transparent 70%);}
+.cta-box h2{position:relative;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;color:var(--white);margin-bottom:0.7rem;}
+.cta-box p{position:relative;color:var(--muted);margin-bottom:1.75rem;font-size:0.9rem;}
+.cta-box .btn-group{position:relative;justify-content:center;}
+
+/* FOOTER */
+footer{background:#050D18;border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;}
+.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.ft-logo{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem;text-decoration:none;}
+.ft-logo svg{width:28px;height:28px;}
+.ft-logo .logo-text{font-size:0.95rem;}
+.ft-brand p{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:0.9rem;}
+.ft-contact a{display:flex;align-items:center;gap:0.45rem;color:#4db8ff;text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;font-weight:600;}
+.ft-contact a:hover{color:#ffffff;}
+.ft-col h4{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.85rem;}
+.ft-col a{display:block;color:var(--muted);text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;}
+.ft-col a:hover{color:var(--white);}
+.ft-bottom{max-width:1200px;margin:1.25rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--muted);}
+@media(max-width:768px){.ft-inner{grid-template-columns:1fr 1fr;gap:1.75rem;}.ft-bottom{flex-direction:column;gap:0.35rem;text-align:center;}}
+@media(max-width:480px){.ft-inner{grid-template-columns:1fr;}}
+
+  
+
+
+  /* ===== NAV STYLES v3 ===== */
+  nav{position:sticky;top:0;z-index:1000;background:rgba(8,16,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .nav-logo{text-decoration:none;display:flex;align-items:center;}
+  .nav-brand{font-family:'Lora',Georgia,serif;font-size:1.4rem;font-weight:600;color:#ffffff;letter-spacing:-0.01em;}
+  .nav-brand em{font-style:italic;color:#2290D8;}
+  .nav-links{display:flex;align-items:center;gap:1.8rem;}
+  .nav-links a{color:#cbd5e1;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:#fff;}
+  .nav-ctas{display:flex;align-items:center;gap:.75rem;}
+  .btn-call{color:#4db8ff;font-weight:600;font-size:.875rem;text-decoration:none;}
+  .btn-primary{background:#197CC0;color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-weight:700;font-size:.875rem;text-decoration:none;}
+  .btn-primary:hover{background:#2290D8;}
+  @media(max-width:700px){.nav-links{display:none;}nav{padding:0 1rem;}}
+  /* ===== END NAV v3 ===== */
+
+</style>
+<style>
+.pw{max-width:1020px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1fr 1.3fr;gap:3rem;align-items:start;}
+.lft .badge2{display:inline-flex;align-items:center;gap:.42rem;background:rgba(25,124,192,.1);border:1px solid rgba(25,124,192,.24);color:var(--blue-b);font-size:.7rem;font-weight:700;padding:.28rem .85rem;border-radius:100px;margin-bottom:1.1rem;letter-spacing:.06em;text-transform:uppercase;}
+.lft h1{font-size:clamp(1.85rem,4vw,2.7rem);font-weight:800;color:var(--white);line-height:1.1;letter-spacing:-.03em;margin-bottom:.85rem;}
+.lft h1 em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.lft>p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:1.65rem;}
+.el{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.65rem;}
+.ei{display:flex;gap:.75rem;align-items:flex-start;}
+.ew{width:34px;height:34px;border-radius:8px;background:rgba(25,124,192,.09);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.ei h4{font-size:.83rem;font-weight:700;color:var(--white);margin-bottom:.1rem;}
+.ei p{font-size:.73rem;color:var(--muted);line-height:1.5;}
+.db3{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.2rem;}
+.db3 p{font-size:.73rem;color:var(--muted);margin-bottom:.75rem;}
+.dbs{display:flex;flex-direction:column;gap:.55rem;}
+.dba{display:flex;align-items:center;gap:.6rem;padding:.72rem .95rem;border-radius:9px;text-decoration:none;font-weight:600;font-size:.8rem;transition:all .2s;}
+.dba.call{background:var(--blue);color:var(--white);}.dba.call:hover{background:var(--blue-b);}
+.dba.wa{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.18);color:var(--green);}.dba.wa:hover{background:rgba(34,197,94,.14);}
+.rp{background:var(--navy-card);border:1px solid var(--border);border-radius:15px;padding:1.9rem;position:sticky;top:80px;}
+.rp h2{font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:.3rem;}
+.rp>p{font-size:.78rem;color:var(--muted);margin-bottom:1.5rem;}
+.sbtn2{width:100%;background:var(--blue);color:var(--white);border:none;padding:.82rem;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .2s;margin-top:.32rem;}
+.sbtn2:hover{background:var(--blue-b);transform:translateY(-2px);}
+.fn2{font-size:.66rem;color:var(--muted);text-align:center;margin-top:.55rem;line-height:1.5;}
+.ss{display:none;text-align:center;padding:1.75rem 1rem;}
+.ss .ck{font-size:2.4rem;margin-bottom:.75rem;}
+.ss h3{font-size:1rem;font-weight:800;color:var(--white);margin-bottom:.35rem;}
+.ss p{font-size:.8rem;color:var(--muted);margin-bottom:1.2rem;}
+.ps{background:var(--navy-mid);border-top:1px solid var(--border);padding:2rem;}
+.pi{max-width:1020px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;text-align:center;}
+.pn{font-size:1.75rem;font-weight:800;background:linear-gradient(135deg,var(--white),var(--blue-b));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.03em;}
+.pl{font-size:.7rem;color:var(--muted);margin-top:.18rem;}
+@media(max-width:860px){.pw{grid-template-columns:1fr;gap:2.25rem;}.rp{position:static;}.pi{grid-template-columns:1fr 1fr;}}
+</style></head><body><nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-brand">IMAK <em>Overseas</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="/destinations.html">Destinations</a>
+    <a href="/our-services.html">Services</a>
+    <a href="/university-finder.html">University Finder</a>
+    <a href="/course-finder.html">Courses</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about-us.html">About</a>
+    <a href="/contact-us.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="tel:+919000171849" class="btn-call">&#128222; Call Us</a>
+    <a href="/book-an-appointment.html" class="btn-primary">Book Free Call</a>
+  </div>
+</nav>
+<div class="pw">
+  <div class="lft">
+    <div class="badge2">&#10003; 100% Free &middot; No Commitment</div>
+    <h1>Book Your <em>Free Counselling</em> Call</h1>
+    <p>A 30-minute call with our Hyderabad-based counsellors. We'll review your profile, answer every question, and recommend the best countries, colleges, and courses for your goals and budget.</p>
+    <div class="el">
+      <div class="ei"><div class="ew">&#127919;</div><div><h4>Personalised University Shortlist</h4><p>Walk away with 3&ndash;5 specific colleges that match your profile &mdash; not a generic list.</p></div></div>
+      <div class="ei"><div class="ew">&#128176;</div><div><h4>Full Cost Breakdown</h4><p>Tuition, living, visa, and total cost for each country &mdash; no surprises later.</p></div></div>
+      <div class="ei"><div class="ew">&#128197;</div><div><h4>Timeline & Next Steps</h4><p>Exactly what needs to happen and when, based on your target intake.</p></div></div>
+      <div class="ei"><div class="ew">&#128683;</div><div><h4>Zero Pressure</h4><p>This is an information call. No pressure to decide anything on the spot.</p></div></div>
+    </div>
+    <div class="db3">
+      <p>Prefer to reach us directly right now?</p>
+      <div class="dbs">
+        <a href="tel:+919000171849" class="dba call">&#128222; Call +91 90001 71849</a>
+        <a href="https://wa.me/919000171849?text=Hi%20IMAK%2C%20I%20want%20to%20book%20a%20free%20counselling%20call." target="_blank" class="dba wa">&#128172; WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="rp">
+    <div id="fs">
+      <h2>Request Your Free Call</h2><p>Fill in your details and we'll call you back within a few hours.</p>
+      <form id="af">
+        <div class="f-row">
+          <div class="fg"><label>Full Name *</label><input type="text" placeholder="Your name" required></div>
+          <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="yourname@gmail.com"></div>
+        <div class="fg"><label>Your Qualification *</label><select required><option value="" disabled selected>Select...</option><option>10th Pass / SSC</option><option>12th Pass / Intermediate</option><option>Diploma</option><option>Bachelor's (Ongoing)</option><option>Bachelor's (Complete)</option><option>Master's Degree</option></select></div>
+        <div class="f-row">
+          <div class="fg"><label>Interested In *</label><select required><option value="" disabled selected>Course type</option><option>MBBS Abroad</option><option>Undergraduate Degree</option><option>Postgraduate / Masters</option><option>Diploma / Short Course</option><option>Not sure yet</option></select></div>
+          <div class="fg"><label>Preferred Country</label><select><option value="" disabled selected>Country</option><option>Singapore</option><option>Malaysia</option><option>UK</option><option>Canada</option><option>Australia</option><option>Germany</option><option>Georgia (MBBS)</option><option>Kyrgyzstan (MBBS)</option><option>Russia (MBBS)</option><option>Philippines (MBBS)</option><option>Dubai</option><option>Malta</option><option>Not sure</option></select></div>
+        </div>
+        <div class="fg"><label>Best Time to Call</label><select><option value="" disabled selected>Preferred time</option><option>Morning (9AM&ndash;12PM)</option><option>Afternoon (12PM&ndash;3PM)</option><option>Evening (3PM&ndash;6PM)</option><option>Any time</option></select></div>
+        <button type="submit" class="sbtn2">&#128222; Book My Free Call</button>
+        <p class="fn2">By submitting, you agree to be contacted by our counselling team. We never share your details.</p>
+      </form>
+    </div>
+    <div class="ss" id="ss">
+      <div class="ck">&#10003;</div><h3>Almost done!</h3>
+      <p>WhatsApp should have opened with your details. <strong>Please tap Send</strong> so our team receives your request. We will call you back within a few hours.</p>
+      <a href="/" class="btn btn-blue" style="margin:0 auto;display:inline-flex;">&larr; Back to Home</a>
+    </div>
+  </div>
+</div>
+<div class="ps"><div class="pi">
+  <div><div class="pn">500+</div><div class="pl">Students Placed</div></div>
+  <div><div class="pn">20+</div><div class="pl">Countries</div></div>
+  <div><div class="pn">Free</div><div class="pl">Always Free Counselling</div></div>
+  <div><div class="pn">Same Day</div><div class="pl">Reply Guaranteed</div></div>
+</div></div>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a href="/" class="ft-logo"><img src="/images/imak-logo.png" alt="IMAK Overseas Education" style="height:36px;width:auto;object-fit:contain;margin-bottom:0.7rem;"></a>
+      <p>Hyderabad's trusted overseas education consultancy. We help Indian students find the right course, college, and country for their goals and budget.</p>
+      <div class="ft-contact">
+        <a href="tel:+919000171849">&#128222; +91 90001 71849</a>
+        <a href="mailto:info@imakinc.com" style="color:inherit;text-decoration:none;">&#9993; info@imakinc.com</a>
+        <a>&#128205; East Marredpally, Secunderabad &ndash; 500026</a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Tools</h4>
+      <a href="/university-finder.html">University Finder</a>
+      <a href="/course-finder">Course Finder</a>
+      <a href="/book-an-appointment">Book Counselling</a>
+    </div>
+    <div class="ft-col"><h4>Destinations</h4>
+      <a href="/study-in-singapore">Singapore</a>
+      <a href="/study-in-malaysia">Malaysia</a>
+      <a href="/study-in-malta">Malta</a>
+      <a href="/mbbs-in-georgia">MBBS Georgia</a>
+      <a href="/mbbs-in-kyrgyzstan">MBBS Kyrgyzstan</a>
+    </div>
+    <div class="ft-col"><h4>Company</h4>
+      <a href="/about-us">About Us</a>
+      <a href="/our-services">Our Services</a>
+      <a href="/destinations">All Destinations</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact-us">Contact Us</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>&copy; 2026 IMAK Overseas Education, Hyderabad. All rights reserved.</span>
+    <span>Visa approvals are subject to respective immigration authorities.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var p=window.location.pathname.replace(/^\/|\.html$/g,'').split('/').pop();
+  document.querySelectorAll('.nav-links a[data-p]').forEach(function(a){
+    if(a.getAttribute('data-p')===p)a.classList.add('active');
+  });
+})();
+</script>
+<script src="/whatsapp-leads.js"></script>
+<script src="/imak-float-contact.js"></script>
+<script>document.getElementById('af').addEventListener('submit', imakBookAppointmentSubmit);</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

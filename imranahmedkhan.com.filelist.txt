@@ -1,0 +1,8 @@
+default.php.bak
+index.html
+photo-about.jpg
+photo-g2.jpg
+photo-g3.jpg
+photo-g5.jpg
+photo-hero.jpg
+photo-media.jpg
