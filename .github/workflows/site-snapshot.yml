@@ -24,13 +24,14 @@ jobs:
           sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R 'ls ~/domains' > domains.txt
           cat domains.txt
           mkdir -p snap
-          for d in imakinc.com ftech.co.in; do
+          for d in imakinc.com ftech.co.in imranahmedkhan.com; do
             sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R \
               "cd ~/domains/$d/public_html 2>/dev/null && find . -type f \( -name '*.html' -o -name '*.htm' -o -name '.htaccess' -o -name 'robots.txt' -o -name 'sitemap*.xml' \) -not -path './blog/*' -print0 | tar --null -czf - -T -" \
               > snap/$d.tgz || echo "no $d"
             mkdir -p snap/$d && tar -xzf snap/$d.tgz -C snap/$d && rm snap/$d.tgz
             sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R "cd ~/domains/$d/public_html 2>/dev/null && find . -type f | sed 's|^./||' | sort" > snap/$d.filelist.txt || true
           done
+          sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R 'for d in ~/domains/*/public_html; do echo "== $d"; ls -la $d | head -40; [ -d $d/.git ] && (cd $d && git remote -v && git log -1 --format="%h %ad %s"); done; echo; crontab -l 2>/dev/null' > snap/server-overview.txt 2>&1 || true
           cp domains.txt snap/
       - name: Commit to site-snapshot branch
         run: |
