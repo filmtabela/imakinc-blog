@@ -1,0 +1,39 @@
+name: Site deploy (main pages)
+# Uploads files under site/<domain>/ to that domain's public_html on Hostinger.
+# Takes a server-side backup of every file it is about to replace first
+# (~/backups/<domain>-<timestamp>.tgz).
+on:
+  push:
+    branches: [main]
+    paths: ['site/**']
+  workflow_dispatch:
+
+concurrency:
+  group: site-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Backup then upload
+        env:
+          SSH_PASS: ${{ secrets.SSH_PASS }}
+        run: |
+          sudo apt-get install -y sshpass >/dev/null
+          OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+          R=u114546712@145.79.209.26
+          TS=$(date -u +%Y%m%d-%H%M%S)
+          cd site
+          for d in */; do
+            d=${d%/}
+            ROOT=domains/$d/public_html
+            (cd $d && find . -type f | sed 's|^\./||' | sort) > /tmp/files-$d.txt
+            echo "== $d: $(wc -l < /tmp/files-$d.txt) files"
+            sshpass -p "$SSH_PASS" scp $OPTS -P 65002 /tmp/files-$d.txt $R:/tmp/files-$d.txt
+            sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R \
+              "mkdir -p ~/backups && cd ~/$ROOT && tar -czf ~/backups/$d-$TS.tgz \$(cat /tmp/files-$d.txt | while read f; do [ -f \"\$f\" ] && echo \"\$f\"; done) && echo backup ~/backups/$d-$TS.tgz"
+            (cd $d && tar -czf - .) | sshpass -p "$SSH_PASS" ssh $OPTS -p 65002 $R "cd ~/$ROOT && tar -xzf -"
+            echo "uploaded $d"
+          done
