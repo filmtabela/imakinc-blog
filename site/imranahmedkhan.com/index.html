@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Imran Ahmed Khan — Overseas Education · Global Affairs · Screenwriting</title>
-  <meta name="description" content="Imran Ahmed Khan. Director of IMAK Overseas Education, Hyderabad. Placing Indian students in universities across the US, UK, Australia, Canada and Europe. Feature screenwriter." />
+  <title>Imran Ahmed Khan — Overseas Education · Screenwriting</title>
+  <meta name="description" content="Imran Ahmed Khan. Director of IMAK Overseas Education, Hyderabad. Placing Indian students in universities across the US, UK, Australia, Canada and Europe. Feature screenwriter with films in development." />
   <meta property="og:title" content="Imran Ahmed Khan" />
-  <meta property="og:description" content="Director, IMAK Overseas Education. Global affairs. Screenwriting. Hyderabad." />
+  <meta property="og:description" content="Director, IMAK Overseas Education. Feature screenwriter. Hyderabad." />
   <meta property="og:url" content="https://imranahmedkhan.com/" />
   <link rel="canonical" href="https://imranahmedkhan.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -363,157 +363,36 @@
 
     .card-link:hover { color: var(--gold-light); }
 
-    /* AHMED GLOBAL */
-    #ahmed-global {
-      background: var(--navy);
+    /* CURRENTLY */
+    #currently { background: var(--navy-mid); }
+    .now-list { border-top: 1px solid rgba(201,168,76,0.2); max-width: 900px; }
+    .now-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      align-items: baseline;
     }
-
-    .media-image {
-      position: relative;
-      height: 60vh;
-      min-height: 420px;
-    }
-
-    .media-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .media-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, transparent 70%, var(--navy) 100%);
-      z-index: 1;
-    }
-
-    .media-stats {
-      display: flex;
-      gap: 2.5rem;
-      margin: 2rem 0;
-    }
-
-    .stat { text-align: center; }
-
-    .stat-val {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--gold);
-      display: block;
-    }
-
-    .stat-label {
+    .now-key {
       font-family: 'Inter', sans-serif;
       font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    /* LATEST INSIGHTS */
-    #insights {
-      background: var(--navy-mid);
-      padding: 6rem 3rem;
-    }
-
-    .insights-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .insights-header-text .section-heading {
-      margin-bottom: 0.5rem;
-    }
-
-    .insights-header-text p {
-      font-size: 1rem;
-      color: var(--muted);
-      max-width: 480px;
-    }
-
-    .insights-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px;
-      margin-bottom: 3rem;
-    }
-
-    .insight-card {
-      background: var(--navy-light);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid rgba(201,168,76,0.15);
-      transition: background 0.2s;
-      overflow: hidden;
-    }
-
-    .insight-card:hover { background: rgba(201,168,76,0.04); }
-
-    .insight-card-cat {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--gold);
-      padding: 1.5rem 1.8rem 0.6rem;
     }
-
-    .insight-card h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1.35;
-      padding: 0 1.8rem 1rem;
-      flex: 1;
-    }
-
-    .insight-card-footer {
+    .now-row p { font-size: 1.15rem; color: rgba(245,240,232,0.8); line-height: 1.6; }
+    .now-row p a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
+    .now-row p a:hover { border-bottom-color: var(--gold); }
+    .card-status {
       font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      padding: 1rem 1.8rem 1.5rem;
-      border-top: 1px solid rgba(201,168,76,0.1);
-    }
-
-    .insights-topics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .topic-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--muted);
-      border: 1px solid rgba(136,146,164,0.2);
-      padding: 0.35rem 0.9rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .topic-tag:hover { border-color: var(--gold); color: var(--gold); }
-
-    .insights-cta {
-      text-align: center;
-      padding-top: 1rem;
+      border: 1px solid rgba(136,146,164,0.3);
+      padding: 0.25rem 0.7rem;
+      display: inline-block;
     }
 
     /* ABOUT */
@@ -709,11 +588,9 @@
       .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2rem; }
       .hero-image { height: 50vh; min-height: 300px; }
       section { padding: 4rem 1.5rem; }
-      #insights { padding: 4rem 1.5rem; }
-      #ahmed-global, #about, .connect-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .now-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      #about, .connect-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .cards-grid { grid-template-columns: 1fr; }
-      .insights-grid { grid-template-columns: 1fr; }
-      .insights-header { flex-direction: column; align-items: flex-start; }
       .form-row { grid-template-columns: 1fr; }
       .ventures-bar { padding: 0.9rem 1.5rem; }
       footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
@@ -727,7 +604,7 @@
     <a href="#" class="nav-logo">Imran <span style="color:var(--gold)">Ahmed</span> Khan</a>
     <ul class="nav-links">
       <li><a href="#what-i-do">Work</a></li>
-      <li><a href="#insights">Insights</a></li>
+      <li><a href="#currently">Currently</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#connect">Connect</a></li>
     </ul>
@@ -739,10 +616,10 @@
     <div class="hero-text">
       <div class="hero-location">Hyderabad · India</div>
       <h1>Imran<br><em>Ahmed</em><br>Khan</h1>
-      <p class="hero-sub">Director of IMAK Overseas Education. I place Indian students in universities across the US, UK, Australia, Canada and Europe — and publish global affairs analysis on the side.</p>
+      <p class="hero-sub">Director of IMAK Overseas Education. Close to ten years in international education — today I place Indian students in universities across the US, UK, Australia, Canada and Europe. I also write feature films.</p>
       <div class="hero-tags">
         <span class="hero-tag">International Education</span>
-        <span class="hero-tag">Global Affairs</span>
+        <span class="hero-tag">Feature Film</span>
         <span class="hero-tag">Screenwriting</span>
         <span class="hero-tag">Hyderabad</span>
       </div>
@@ -770,62 +647,40 @@
   <!-- WHAT I DO -->
   <section id="what-i-do">
     <div class="section-label">What I Do</div>
-    <h2 class="section-heading">Two things.<br><em>One instinct.</em></h2>
+    <h2 class="section-heading">Two pillars.<br><em>One instinct.</em></h2>
     <div class="cards-grid">
       <div class="card">
-        <div class="card-num">01</div>
+        <div class="card-num">01 — Education</div>
         <h3>Overseas Education</h3>
-        <p>IMAK Overseas Education places Indian students in universities across the US, UK, Australia, Canada and Europe — admissions, visa guidance and placement, end to end.</p>
+        <p>Close to ten years marketing international education for overseas institutions across the Middle East and Southeast Asia. That work became IMAK Overseas Education — admissions, visa guidance and placement for Indian students heading to the US, UK, Australia, Canada and Europe, end to end.</p>
         <a href="https://imakinc.com" class="card-link" target="_blank">IMAK Overseas ↗</a>
       </div>
       <div class="card">
-        <div class="card-num">02</div>
+        <div class="card-num">02 — Film</div>
         <h3>Screenwriting</h3>
-        <p>Feature screenplays, registered with the Screenwriters Association. Crime, character, and the machinery of power — the same map, told a different way.</p>
+        <p>Feature screenplays, registered with the Screenwriters Association. Crime, character and the machinery of power — several features in development, in Hindi and regional cinema.</p>
+        <span class="card-status">In development</span>
       </div>
     </div>
   </section>
 
-  <!-- LATEST INSIGHTS -->
-  <section id="insights">
-    <div class="insights-header">
-      <div class="insights-header-text">
-        <div class="section-label">Latest Insights</div>
-        <h2 class="section-heading">Notes on<br><em>power and money.</em></h2>
-        <p>Analysis on global affairs, education and strategy — from the blog at blog.imranahmedkhan.com</p>
+  <!-- CURRENTLY -->
+  <section id="currently">
+    <div class="section-label">Currently</div>
+    <h2 class="section-heading">What's on<br><em>the desk.</em></h2>
+    <div class="now-list">
+      <div class="now-row">
+        <div class="now-key">Education</div>
+        <p>Admissions open for the 2027 intakes — placing students across Australia, the UK, Canada and Europe through <a href="https://imakinc.com" target="_blank">IMAK Overseas</a>.</p>
       </div>
-      <a href="https://blog.imranahmedkhan.com/articles.html" class="btn-secondary" target="_blank">View All Articles →</a>
-    </div>
-
-    <div class="insights-grid">
-      <a href="https://blog.imranahmedkhan.com" class="insight-card" target="_blank">
-        <div class="insight-card-cat">Study Abroad</div>
-        <h3>Best Countries To Study Abroad For Indian Students</h3>
-        <div class="insight-card-footer">Read on the Blog →</div>
-      </a>
-      <a href="https://blog.imranahmedkhan.com" class="insight-card" target="_blank">
-        <div class="insight-card-cat">Geopolitics</div>
-        <h3>India's Rise: Why Smart Money Is Betting on India</h3>
-        <div class="insight-card-footer">Read on the Blog →</div>
-      </a>
-      <a href="https://blog.imranahmedkhan.com" class="insight-card" target="_blank">
-        <div class="insight-card-cat">Global Affairs</div>
-        <h3>How US–China Tensions Are Reshaping Global Business</h3>
-        <div class="insight-card-footer">Read on the Blog →</div>
-      </a>
-    </div>
-
-    <div class="insights-topics">
-      <a href="https://blog.imranahmedkhan.com" class="topic-tag" target="_blank">Study Abroad</a>
-      <a href="https://blog.imranahmedkhan.com" class="topic-tag" target="_blank">Geopolitics</a>
-      <a href="https://blog.imranahmedkhan.com" class="topic-tag" target="_blank">Global Affairs</a>
-      <a href="https://blog.imranahmedkhan.com" class="topic-tag" target="_blank">Entrepreneurship</a>
-      <a href="https://blog.imranahmedkhan.com" class="topic-tag" target="_blank">Emerging Markets</a>
-      <a href="https://blog.imranahmedkhan.com" class="topic-tag" target="_blank">Strategy</a>
-    </div>
-
-    <div class="insights-cta">
-      <a href="https://blog.imranahmedkhan.com" class="btn-primary" target="_blank">Read the Blog →</a>
+      <div class="now-row">
+        <div class="now-key">Film</div>
+        <p>Several feature screenplays in development across crime and thriller. One is being taken to lead talent.</p>
+      </div>
+      <div class="now-row">
+        <div class="now-key">Open to</div>
+        <p>Institution partnerships, sub-agent appointments across India, and conversations with producers. <a href="#connect">Get in touch</a>.</p>
+      </div>
     </div>
   </section>
 
