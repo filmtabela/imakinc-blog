@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About Us | IMAK Overseas Education | Hyderabad</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08101E;--navy-mid:#0D1B2E;--navy-card:#102038;--navy-light:#163050;
+  --border:rgba(25,124,192,0.16);--blue:#197CC0;--blue-b:#2290D8;--blue-g:rgba(25,124,192,0.11);
+  --white:#FFFFFF;--text:#D8E8F4;--muted:#7DA4BF;--green:#22C55E;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,16,30,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-logo{display:flex;align-items:center;gap:0.55rem;text-decoration:none;flex-shrink:0;}
+.nav-logo svg{width:32px;height:32px;}
+.logo-text{font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;line-height:1;}
+.logo-text span{color:var(--blue-b);}
+.nav-links{display:flex;align-items:center;gap:0.1rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.42rem 0.65rem;border-radius:6px;transition:all 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--navy-light);}
+.nav-call{color:var(--blue-b)!important;font-weight:700!important;}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:0.42rem 1rem!important;border-radius:7px!important;font-weight:700!important;}
+.nav-cta:hover{background:var(--blue-b)!important;}
+.mob-cta{display:none;gap:0.5rem;}
+@media(max-width:960px){.nav-links{display:none;}.mob-cta{display:flex;}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 60%,#091525 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(25,124,192,0.12) 0%,transparent 70%);}
+.badge{position:relative;display:inline-flex;align-items:center;gap:0.45rem;background:rgba(25,124,192,0.1);border:1px solid rgba(25,124,192,0.28);color:var(--blue-b);font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.06em;text-transform:uppercase;}
+.hero h1{position:relative;font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-0.03em;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.hero p{position:relative;font-size:1rem;color:var(--muted);max-width:560px;margin:0 auto 2rem;}
+
+/* LAYOUT */
+section{padding:5rem 2rem;}.container{max-width:1200px;margin:0 auto;}
+.s-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-b);margin-bottom:0.55rem;}
+.s-title{font-size:clamp(1.75rem,4vw,2.6rem);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-0.025em;margin-bottom:0.9rem;}
+.s-title em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.s-sub{font-size:0.95rem;color:var(--muted);max-width:560px;line-height:1.7;}
+.alt{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* CARD */
+.card{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;transition:border-color 0.22s,transform 0.22s;}
+.card:hover{border-color:rgba(25,124,192,0.38);transform:translateY(-3px);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.82rem 1.8rem;border-radius:9px;font-weight:700;font-size:0.88rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-blue{background:var(--blue);color:var(--white);}.btn-blue:hover{background:var(--blue-b);transform:translateY(-2px);}
+.btn-out{background:transparent;color:var(--white);border:1px solid var(--border);}.btn-out:hover{border-color:var(--blue-b);color:var(--blue-b);}
+.btn-sm{padding:0.45rem 0.9rem;font-size:0.8rem;border-radius:7px;}
+.btn-group{display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+/* TAG */
+.tag{font-size:0.66rem;font-weight:700;padding:0.2rem 0.52rem;border-radius:100px;background:rgba(25,124,192,0.09);border:1px solid rgba(25,124,192,0.2);color:var(--blue-b);letter-spacing:0.03em;}
+
+/* FORM */
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:0.7rem;font-weight:700;color:var(--muted);margin-bottom:0.42rem;letter-spacing:0.06em;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(8,16,30,0.8);border:1px solid var(--border);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;padding:0.72rem 0.95rem;border-radius:9px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue-b);box-shadow:0 0 0 3px rgba(25,124,192,0.09);}
+.fg select option{background:var(--navy-mid);}
+.fg textarea{resize:vertical;min-height:100px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:500px){.f-row{grid-template-columns:1fr;}}
+
+/* CTA BOX */
+.cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:18px;padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;max-width:680px;margin:0 auto;}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,var(--blue-g) 0%,transparent 70%);}
+.cta-box h2{position:relative;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;color:var(--white);margin-bottom:0.7rem;}
+.cta-box p{position:relative;color:var(--muted);margin-bottom:1.75rem;font-size:0.9rem;}
+.cta-box .btn-group{position:relative;justify-content:center;}
+
+/* FOOTER */
+footer{background:#050D18;border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;}
+.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.ft-logo{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem;text-decoration:none;}
+.ft-logo svg{width:28px;height:28px;}
+.ft-logo .logo-text{font-size:0.95rem;}
+.ft-brand p{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:0.9rem;}
+.ft-contact a{display:flex;align-items:center;gap:0.45rem;color:#4db8ff;text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;font-weight:600;}
+.ft-contact a:hover{color:#ffffff;}
+.ft-col h4{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.85rem;}
+.ft-col a{display:block;color:var(--muted);text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;}
+.ft-col a:hover{color:var(--white);}
+.ft-bottom{max-width:1200px;margin:1.25rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--muted);}
+@media(max-width:768px){.ft-inner{grid-template-columns:1fr 1fr;gap:1.75rem;}.ft-bottom{flex-direction:column;gap:0.35rem;text-align:center;}}
+@media(max-width:480px){.ft-inner{grid-template-columns:1fr;}}
+
+  
+
+
+  /* ===== NAV STYLES v3 ===== */
+  nav{position:sticky;top:0;z-index:1000;background:rgba(8,16,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .nav-logo{text-decoration:none;display:flex;align-items:center;}
+  .nav-brand{font-family:'Lora',Georgia,serif;font-size:1.4rem;font-weight:600;color:#ffffff;letter-spacing:-0.01em;}
+  .nav-brand em{font-style:italic;color:#2290D8;}
+  .nav-links{display:flex;align-items:center;gap:1.8rem;}
+  .nav-links a{color:#cbd5e1;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:#fff;}
+  .nav-ctas{display:flex;align-items:center;gap:.75rem;}
+  .btn-call{color:#4db8ff;font-weight:600;font-size:.875rem;text-decoration:none;}
+  .btn-primary{background:#197CC0;color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-weight:700;font-size:.875rem;text-decoration:none;}
+  .btn-primary:hover{background:#2290D8;}
+  @media(max-width:700px){.nav-links{display:none;}nav{padding:0 1rem;}}
+  /* ===== END NAV v3 ===== */
+
+</style>
+<style>
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;margin-top:2.5rem;}
+.story-text p{color:var(--muted);font-size:.93rem;line-height:1.8;margin-bottom:1.1rem;}
+.story-text p strong{color:var(--text);}
+.stat-box{background:var(--navy-card);border:1px solid var(--border);border-radius:18px;padding:2.5rem;}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+.stat-item{text-align:center;}
+.stat-n{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,var(--white),var(--blue-b));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.04em;line-height:1;}
+.stat-l{font-size:.72rem;color:var(--muted);margin-top:.3rem;font-weight:600;}
+.pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
+.pillar{padding:1.75rem;}
+.p-icon{font-size:1.75rem;margin-bottom:.9rem;}
+.pillar h3{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.5rem;}
+.pillar p{font-size:.82rem;color:var(--muted);line-height:1.65;}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.5rem;}
+.process-step{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.25rem;text-align:center;}
+.process-step .num{font-size:1.25rem;font-weight:800;color:var(--blue-b);margin-bottom:.5rem;}
+.process-step h4{font-size:.82rem;font-weight:700;color:var(--white);margin-bottom:.35rem;}
+.process-step p{font-size:.72rem;color:var(--muted);line-height:1.55;}
+.lead-card{background:var(--navy-card);border:1px solid rgba(25,124,192,.22);border-radius:14px;padding:2rem;margin-top:2rem;}
+.lead-card h3{font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:.5rem;}
+.lead-card p{font-size:.88rem;color:var(--muted);line-height:1.75;max-width:720px;}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem;}
+.review-card{padding:1.75rem;}
+.stars{color:#F59E0B;font-size:0.85rem;margin-bottom:0.9rem;}
+.review-card blockquote{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:1.1rem;font-style:italic;}
+.reviewer strong{font-size:0.85rem;font-weight:700;color:var(--white);display:block;}
+.reviewer span{font-size:0.75rem;color:var(--muted);}
+.vals-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:2.5rem;}
+.val-item{display:flex;gap:.9rem;align-items:flex-start;padding:1.4rem;}
+.v-icon{width:38px;height:38px;border-radius:9px;background:rgba(25,124,192,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.val-item h4{font-size:.85rem;font-weight:700;color:var(--white);margin-bottom:.2rem;}
+.val-item p{font-size:.78rem;color:var(--muted);line-height:1.6;}
+@media(max-width:768px){.story-grid,.pillar-grid,.vals-grid,.process-grid,.review-grid{grid-template-columns:1fr;}}
+</style></head><body>
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-brand">IMAK <em>Overseas</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="/destinations.html">Destinations</a>
+    <a href="/our-services.html">Services</a>
+    <a href="/university-finder.html">University Finder</a>
+    <a href="/course-finder.html">Courses</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about-us.html">About</a>
+    <a href="/contact-us.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="tel:+919000171849" class="btn-call">&#128222; Call Us</a>
+    <a href="/book-an-appointment.html" class="btn-primary">Book Free Call</a>
+  </div>
+</nav>
+<section class="hero"><div class="hero-bg" style="position:absolute;inset:0;"></div>
+  <div style="position:relative;">
+  <div class="badge">&#127970; Hyderabad Based &middot; Since 2019</div>
+  <h1>We Help Indian Students<br><em>Reach the World</em></h1>
+  <p>Built on honest guidance, real results, and a deep commitment to every student's future &mdash; not commissions.</p>
+  </div>
+</section>
+<section><div class="container">
+  <p class="s-label">Our Story</p>
+  <h2 class="s-title">Started in Hyderabad,<br><em>Built for Indian Students</em></h2>
+  <div class="story-grid">
+    <div class="story-text">
+      <p>IMAK Overseas Education was founded with one clear frustration: too many students were getting wrong advice from consultants who prioritised commissions over careers. <strong>We built IMAK to be different.</strong></p>
+      <p>We started by listening &mdash; to students who didn't have top scores, to families worried about money, to aspirations that didn't fit the standard "UK or USA" template. We built a consultancy around the full range of possibilities, from MBBS in Georgia at &#8377;3.5L per year to postgrad at top UK universities.</p>
+      <p>Led by <strong>Imran Khan</strong>, IMAK has supported <strong>800+ students</strong> to study abroad over years of work in Hyderabad &mdash; from a full counselling team to today's focused, hands-on service. Students and families across India trust us for MBBS, UK, Canada, Singapore, and more.</p>
+      <p><strong>No false promises. No pressure. Just honest, personalised guidance</strong> &mdash; whether you visit us in Secunderabad or speak with us on video from Punjab, Gujarat, or abroad.</p>
+    </div>
+    <div class="stat-box"><div class="stat-grid">
+      <div class="stat-item"><div class="stat-n">800+</div><div class="stat-l">Students Guided</div></div>
+      <div class="stat-item"><div class="stat-n">20+</div><div class="stat-l">Countries</div></div>
+      <div class="stat-item"><div class="stat-n">500+</div><div class="stat-l">Partner Colleges</div></div>
+      <div class="stat-item"><div class="stat-n">Free</div><div class="stat-l">Counselling</div></div>
+    </div></div>
+  </div>
+</div></section>
+<section class="alt"><div class="container">
+  <p class="s-label">What We Stand For</p>
+  <h2 class="s-title">Our Three <em>Pillars</em></h2>
+  <div class="pillar-grid">
+    <div class="card pillar"><div class="p-icon">&#127919;</div><h3>Honest Guidance</h3><p>We tell you what's realistic, not what sounds good. If a destination isn't right for your profile we'll say so &mdash; and find you something better.</p></div>
+    <div class="card pillar"><div class="p-icon">&#128176;</div><h3>All Budgets Welcome</h3><p>From &#8377;3L for Singapore private colleges to &#8377;50L for top UK universities &mdash; we work with every financial situation without judgement.</p></div>
+    <div class="card pillar"><div class="p-icon">&#129309;</div><h3>Full-Journey Support</h3><p>Visa guidance, pre-departure briefings, and post-arrival support &mdash; we're with you until you're settled in your new country.</p></div>
+  </div>
+</div></section>
+<section><div class="container">
+  <p class="s-label">How We Work</p>
+  <h2 class="s-title">Simple Process, <em>Serious Results</em></h2>
+  <p class="s-sub">The same end-to-end support we delivered with a larger team &mdash; now with direct attention on every case.</p>
+  <div class="process-grid">
+    <div class="process-step"><div class="num">1</div><h4>Free consultation</h4><p>Call, WhatsApp, or visit Secunderabad. We review marks, budget, and goals.</p></div>
+    <div class="process-step"><div class="num">2</div><h4>Shortlist &amp; plan</h4><p>Countries and colleges that fit &mdash; with honest cost breakdowns.</p></div>
+    <div class="process-step"><div class="num">3</div><h4>Apply &amp; visa</h4><p>Applications, documents, and visa guidance through to approval.</p></div>
+    <div class="process-step"><div class="num">4</div><h4>Fly &amp; settle</h4><p>Pre-departure briefing and support until you reach campus.</p></div>
+  </div>
+  <div class="lead-card"><h3>Led by Imran Khan</h3><p>IMAK Overseas is led by Imran Khan. Over years in Hyderabad we have guided <strong>800+ students</strong> to universities abroad &mdash; MBBS, UK, Canada, Singapore, Europe, and more. Today you work with experienced counsel, not a call centre. Counselling remains free; we earn through university partnerships when you enrol.</p></div>
+</div></section>
+<section class="alt"><div class="container">
+  <p class="s-label">Student Stories</p>
+  <h2 class="s-title">What Our Students <em>Say</em></h2>
+  <p class="s-sub">Real students, real results.</p>
+  <div class="review-grid">
+    <div class="card review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I had no idea where to start. The AI tool matched me with three universities in Canada within 2 minutes. I got my visa in 6 weeks. Highly recommend IMAK."</blockquote><div class="reviewer"><strong>Priya Reddy</strong><span>Now studying Business at York University, Canada</span></div></div>
+    <div class="card review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"My NEET score was not enough for India private colleges. IMAK guided me to Georgia for MBBS. Total cost is less than what India colleges charge. Very happy."</blockquote><div class="reviewer"><strong>Mohammed Farhan</strong><span>MBBS student at Tbilisi State Medical University, Georgia</span></div></div>
+    <div class="card review-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>"I was scared to go abroad because of IELTS. IMAK found me a college in Singapore that does not require IELTS. Now I am working part time and studying. Best decision."</blockquote><div class="reviewer"><strong>Sai Krishna</strong><span>IT student at Nanyang College, Singapore</span></div></div>
+  </div>
+</div></section>
+<section class="alt"><div class="container">
+  <p class="s-label">Why Choose IMAK</p>
+  <h2 class="s-title">What Makes Us <em>Different</em></h2>
+  <div class="vals-grid">
+    <div class="card val-item"><div class="v-icon">&#129302;</div><div><h4>AI-Powered Matching</h4><p>Our tool matches your profile to the best university in under 2 minutes &mdash; personalised, not generic.</p></div></div>
+    <div class="card val-item"><div class="v-icon">&#128205;</div><div><h4>Hyderabad Based</h4><p>We understand Telugu-speaking families. We speak your language and are reachable in person.</p></div></div>
+    <div class="card val-item"><div class="v-icon">&#128683;</div><div><h4>No Hidden Fees</h4><p>Counselling is always free. We earn through university partnerships &mdash; advice is never commission-driven.</p></div></div>
+    <div class="card val-item"><div class="v-icon">&#127973;</div><div><h4>MBBS Specialists</h4><p>Deep expertise in NMC-approved MBBS across 9 countries &mdash; rare among Hyderabad consultancies.</p></div></div>
+  </div>
+</div></section>
+<section><div class="container"><div class="cta-box">
+  <h2>Ready to Start Your Journey?</h2>
+  <p>Book a free counselling call. No pressure, no commitment &mdash; just honest advice.</p>
+  <div class="btn-group"><a href="/book-an-appointment" class="btn btn-blue">&#128222; Book Free Call</a><a href="/university-finder.html" class="btn btn-out">&#127891; University Finder</a></div>
+</div></div></section>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a href="/" class="ft-logo"><img src="/images/imak-logo.png" alt="IMAK Overseas Education" style="height:36px;width:auto;object-fit:contain;margin-bottom:0.7rem;"></a>
+      <p>Hyderabad's trusted overseas education consultancy. We help Indian students find the right course, college, and country for their goals and budget.</p>
+      <div class="ft-contact">
+        <a href="tel:+919000171849">&#128222; +91 90001 71849</a>
+        <a href="mailto:info@imakinc.com" style="color:#4db8ff;text-decoration:none;">&#9993;&#65039; info@imakinc.com</a>
+        <a>&#128205; East Marredpally, Secunderabad &ndash; 500026</a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Tools</h4>
+      <a href="/university-finder.html">University Finder</a>
+      <a href="/course-finder">Course Finder</a>
+      <a href="/book-an-appointment">Book Counselling</a>
+    </div>
+    <div class="ft-col"><h4>Destinations</h4>
+      <a href="/study-in-singapore">Singapore</a>
+      <a href="/study-in-malaysia">Malaysia</a>
+      <a href="/study-in-malta">Malta</a>
+      <a href="/mbbs-in-georgia">MBBS Georgia</a>
+      <a href="/mbbs-in-kyrgyzstan">MBBS Kyrgyzstan</a>
+    </div>
+    <div class="ft-col"><h4>Company</h4>
+      <a href="/about-us">About Us</a>
+      <a href="/our-services">Our Services</a>
+      <a href="/destinations">All Destinations</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact-us">Contact Us</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>&copy; 2026 IMAK Overseas Education, Hyderabad. All rights reserved.</span>
+    <span>Visa approvals are subject to respective immigration authorities.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var p=window.location.pathname.replace(/^\/|\.html$/g,'').split('/').pop();
+  document.querySelectorAll('.nav-links a[data-p]').forEach(function(a){
+    if(a.getAttribute('data-p')===p)a.classList.add('active');
+  });
+})();
+</script>
+<script src="/imak-float-contact.js"></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

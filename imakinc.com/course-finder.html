@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Find Your Course Abroad | IMAK Overseas Education</title>
+<meta name="description" content="Find affordable courses at private colleges worldwide. No IELTS. Easy visa. Free counselling from IMAK Overseas Education Hyderabad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08101E;--navy-mid:#0D1B2E;--navy-card:#102038;--navy-light:#163050;
+  --border:rgba(25,124,192,0.16);--blue:#197CC0;--blue-b:#2290D8;--blue-g:rgba(25,124,192,0.11);
+  --white:#FFFFFF;--text:#D8E8F4;--muted:#7DA4BF;--green:#22C55E;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,16,30,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-logo{display:flex;align-items:center;gap:0.55rem;text-decoration:none;flex-shrink:0;}
+.nav-logo svg{width:32px;height:32px;}
+.logo-text{font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;line-height:1;}
+.logo-text span{color:var(--blue-b);}
+.nav-links{display:flex;align-items:center;gap:0.1rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.42rem 0.65rem;border-radius:6px;transition:all 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--navy-light);}
+.nav-call{color:var(--blue-b)!important;font-weight:700!important;}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:0.42rem 1rem!important;border-radius:7px!important;font-weight:700!important;}
+.nav-cta:hover{background:var(--blue-b)!important;}
+.mob-cta{display:none;gap:0.5rem;}
+@media(max-width:960px){.nav-links{display:none;}.mob-cta{display:flex;}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 60%,#091525 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(25,124,192,0.12) 0%,transparent 70%);}
+.badge{position:relative;display:inline-flex;align-items:center;gap:0.45rem;background:rgba(25,124,192,0.1);border:1px solid rgba(25,124,192,0.28);color:var(--blue-b);font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.06em;text-transform:uppercase;}
+.hero h1{position:relative;font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-0.03em;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.hero p{position:relative;font-size:1rem;color:var(--muted);max-width:560px;margin:0 auto 2rem;}
+
+/* LAYOUT */
+section{padding:5rem 2rem;}.container{max-width:1200px;margin:0 auto;}
+.s-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-b);margin-bottom:0.55rem;}
+.s-title{font-size:clamp(1.75rem,4vw,2.6rem);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-0.025em;margin-bottom:0.9rem;}
+.s-title em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.s-sub{font-size:0.95rem;color:var(--muted);max-width:560px;line-height:1.7;}
+.alt{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* CARD */
+.card{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;transition:border-color 0.22s,transform 0.22s;}
+.card:hover{border-color:rgba(25,124,192,0.38);transform:translateY(-3px);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.82rem 1.8rem;border-radius:9px;font-weight:700;font-size:0.88rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-blue{background:var(--blue);color:var(--white);}.btn-blue:hover{background:var(--blue-b);transform:translateY(-2px);}
+.btn-out{background:transparent;color:var(--white);border:1px solid var(--border);}.btn-out:hover{border-color:var(--blue-b);color:var(--blue-b);}
+.btn-sm{padding:0.45rem 0.9rem;font-size:0.8rem;border-radius:7px;}
+.btn-group{display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+/* TAG */
+.tag{font-size:0.66rem;font-weight:700;padding:0.2rem 0.52rem;border-radius:100px;background:rgba(25,124,192,0.09);border:1px solid rgba(25,124,192,0.2);color:var(--blue-b);letter-spacing:0.03em;}
+
+/* FORM */
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:0.7rem;font-weight:700;color:var(--muted);margin-bottom:0.42rem;letter-spacing:0.06em;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(8,16,30,0.8);border:1px solid var(--border);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;padding:0.72rem 0.95rem;border-radius:9px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue-b);box-shadow:0 0 0 3px rgba(25,124,192,0.09);}
+.fg select option{background:var(--navy-mid);}
+.fg textarea{resize:vertical;min-height:100px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:500px){.f-row{grid-template-columns:1fr;}}
+
+/* CTA BOX */
+.cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:18px;padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;max-width:680px;margin:0 auto;}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,var(--blue-g) 0%,transparent 70%);}
+.cta-box h2{position:relative;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;color:var(--white);margin-bottom:0.7rem;}
+.cta-box p{position:relative;color:var(--muted);margin-bottom:1.75rem;font-size:0.9rem;}
+.cta-box .btn-group{position:relative;justify-content:center;}
+
+/* FOOTER */
+footer{background:#050D18;border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;}
+.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.ft-logo{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem;text-decoration:none;}
+.ft-logo svg{width:28px;height:28px;}
+.ft-logo .logo-text{font-size:0.95rem;}
+.ft-brand p{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:0.9rem;}
+.ft-contact a{display:flex;align-items:center;gap:0.45rem;color:#4db8ff;text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;font-weight:600;}
+.ft-contact a:hover{color:#ffffff;}
+.ft-col h4{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.85rem;}
+.ft-col a{display:block;color:var(--muted);text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;}
+.ft-col a:hover{color:var(--white);}
+.ft-bottom{max-width:1200px;margin:1.25rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--muted);}
+@media(max-width:768px){.ft-inner{grid-template-columns:1fr 1fr;gap:1.75rem;}.ft-bottom{flex-direction:column;gap:0.35rem;text-align:center;}}
+@media(max-width:480px){.ft-inner{grid-template-columns:1fr;}}
+
+  
+
+
+  /* ===== NAV STYLES v3 ===== */
+  nav{position:sticky;top:0;z-index:1000;background:rgba(8,16,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .nav-logo{text-decoration:none;display:flex;align-items:center;}
+  .nav-brand{font-family:'Lora',Georgia,serif;font-size:1.4rem;font-weight:600;color:#ffffff;letter-spacing:-0.01em;}
+  .nav-brand em{font-style:italic;color:#2290D8;}
+  .nav-links{display:flex;align-items:center;gap:1.8rem;}
+  .nav-links a{color:#cbd5e1;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:#fff;}
+  .nav-ctas{display:flex;align-items:center;gap:.75rem;}
+  .btn-call{color:#4db8ff;font-weight:600;font-size:.875rem;text-decoration:none;}
+  .btn-primary{background:#197CC0;color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-weight:700;font-size:.875rem;text-decoration:none;}
+  .btn-primary:hover{background:#2290D8;}
+  @media(max-width:700px){.nav-links{display:none;}nav{padding:0 1rem;}}
+  /* ===== END NAV v3 ===== */
+
+</style>
+<style>
+body{background:var(--navy);}
+.cf-wrap{max-width:760px;margin:0 auto;padding:2.5rem 1.5rem 5rem;}
+.cf-header{background:linear-gradient(135deg,#0D1B2E,#102038);border:1px solid var(--border);border-radius:18px;padding:2.5rem;margin-bottom:2rem;text-align:center;position:relative;overflow:hidden;}
+.cf-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(25,124,192,0.15) 0%,transparent 70%);}
+.cf-header h1{position:relative;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:0.7rem;}
+.cf-header h1 em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.cf-header p{position:relative;font-size:0.9rem;color:var(--muted);margin-bottom:1.25rem;line-height:1.6;}
+.cf-checks{position:relative;display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;}
+.cf-check{font-size:0.78rem;color:var(--text);font-weight:600;}
+.cf-check::before{content:'&#10003; ';color:var(--blue-b);}
+.progress-wrap{margin-bottom:2rem;}
+.progress-top{display:flex;justify-content:space-between;font-size:0.75rem;color:var(--muted);margin-bottom:0.5rem;font-weight:600;}
+.progress-bar{height:5px;background:var(--navy-card);border-radius:100px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--blue-b));border-radius:100px;transition:width 0.4s ease;}
+.q-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:2rem;}
+.q-num{display:inline-block;background:rgba(25,124,192,0.12);border:1px solid var(--border);color:var(--blue-b);font-size:0.72rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:6px;margin-bottom:1rem;letter-spacing:0.05em;}
+.q-card h2{font-size:1.25rem;font-weight:800;color:var(--white);margin-bottom:0.35rem;}
+.q-card .q-sub{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem;}
+.options-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;}
+.opt-btn{background:var(--navy);border:1.5px solid var(--border);border-radius:11px;padding:1rem 0.8rem;cursor:pointer;transition:all 0.2s;text-align:left;font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);}
+.opt-btn:hover{border-color:var(--blue);background:rgba(25,124,192,0.06);}
+.opt-btn.selected{border-color:var(--blue);background:rgba(25,124,192,0.12);color:var(--white);}
+.opt-flag{font-size:1.5rem;display:block;margin-bottom:0.4rem;}
+.opt-code{font-size:0.72rem;font-weight:700;color:var(--blue-b);letter-spacing:0.05em;display:block;margin-bottom:0.15rem;}
+.opt-name{font-size:0.85rem;font-weight:600;color:var(--white);display:block;}
+.opt-icon{font-size:1.4rem;display:block;margin-bottom:0.5rem;}
+.opt-label{font-size:0.88rem;font-weight:700;color:var(--white);display:block;margin-bottom:0.15rem;}
+.opt-sub{font-size:0.72rem;color:var(--muted);display:block;}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;}
+.q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;gap:1rem;}
+.btn-back{background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.7rem 1.4rem;border-radius:9px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;font-weight:600;transition:all 0.2s;}
+.btn-back:hover{border-color:var(--blue-b);color:var(--white);}
+.btn-next{background:var(--blue);color:var(--white);border:none;padding:0.7rem 1.8rem;border-radius:9px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:0.9rem;font-weight:700;transition:all 0.2s;}
+.btn-next:hover{background:var(--blue-b);}
+.btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+.loading-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:2.5rem;text-align:center;display:none;}
+.loading-card h3{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;}
+.loading-card p{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem;}
+.load-steps{list-style:none;text-align:left;max-width:320px;margin:0 auto;}
+.load-steps li{font-size:0.82rem;color:var(--muted);padding:0.35rem 0;display:flex;align-items:center;gap:0.5rem;}
+.load-steps li.done{color:var(--blue-b);}
+.load-steps li.done::before{content:'&#10003;';font-weight:700;}
+.load-steps li:not(.done)::before{content:'&#9675;';}
+.results-card{background:var(--navy-card);border:1px solid var(--border);border-radius:16px;padding:2rem;display:none;}
+.results-card h2{font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:0.35rem;}
+.results-card p{font-size:0.82rem;color:var(--muted);margin-bottom:1.5rem;}
+.result-item{background:var(--navy);border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:0.9rem;}
+.result-item:last-child{margin-bottom:0;}
+.result-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.5rem;}
+.result-name{font-size:0.95rem;font-weight:700;color:var(--white);}
+.result-badge{font-size:0.68rem;font-weight:700;padding:0.2rem 0.55rem;border-radius:100px;background:rgba(25,124,192,0.1);border:1px solid rgba(25,124,192,0.22);color:var(--blue-b);white-space:nowrap;}
+.result-detail{font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:0.75rem;}
+.result-tags{display:flex;gap:0.4rem;flex-wrap:wrap;}
+.counsel-box{background:linear-gradient(135deg,rgba(25,124,192,0.1),var(--navy-card));border:1px solid rgba(25,124,192,0.28);border-radius:14px;padding:1.75rem;margin-top:1.5rem;text-align:center;}
+.counsel-box h3{font-size:1rem;font-weight:800;color:var(--white);margin-bottom:0.4rem;}
+.counsel-box p{font-size:0.82rem;color:var(--muted);margin-bottom:1.1rem;}
+.counsel-form{display:flex;gap:0.7rem;max-width:400px;margin:0 auto;}
+.counsel-form input{flex:1;background:rgba(8,16,30,0.8);border:1px solid var(--border);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.85rem;padding:0.65rem 0.9rem;border-radius:9px;outline:none;}
+.counsel-form input::placeholder{color:var(--muted);}
+.counsel-form input:focus{border-color:var(--blue-b);}
+.success-note{font-size:0.8rem;color:var(--blue-b);font-weight:600;margin-top:0.7rem;display:none;}
+.restart-btn{background:transparent;border:none;color:var(--muted);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.8rem;cursor:pointer;margin-top:1.25rem;text-decoration:underline;display:block;margin-left:auto;}
+.restart-btn:hover{color:var(--white);}
+@media(max-width:600px){.options-grid{grid-template-columns:1fr 1fr;}.budget-grid{grid-template-columns:1fr;}}
+</style>
+</head><body>
+<nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-brand">IMAK <em>Overseas</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="/destinations.html">Destinations</a>
+    <a href="/our-services.html">Services</a>
+    <a href="/university-finder.html">University Finder</a>
+    <a href="/course-finder.html">Courses</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about-us.html">About</a>
+    <a href="/contact-us.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="tel:+919000171849" class="btn-call">&#128222; Call Us</a>
+    <a href="/book-an-appointment.html" class="btn-primary">Book Free Call</a>
+  </div>
+</nav>
+<div class="cf-wrap">
+  <div class="cf-header">
+    <h1>Study Abroad<br><em>Without Breaking the Bank</em></h1>
+    <p>Find affordable courses at private colleges worldwide. No IELTS. Easy visa. Pay after visa options available.</p>
+    <div class="cf-checks">
+      <span class="cf-check">No IELTS Options</span>
+      <span class="cf-check">Flexible Payment</span>
+      <span class="cf-check">10th Pass Eligible</span>
+      <span class="cf-check">Free Counselling</span>
+    </div>
+  </div>
+
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-top">
+      <span id="qLabel">Question 1 of 4</span>
+      <span id="qPct">25%</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:25%"></div></div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="q-card" id="q1">
+    <div class="q-num">01</div>
+    <h2>Where do you want to study?</h2>
+    <p class="q-sub">All options below have good visa approval rates for Indian students.</p>
+    <div class="options-grid" id="dest-opts">
+      <button class="opt-btn" onclick="selectOpt(this,'dest','sg')"><span class="opt-flag"></span><span class="opt-code">SG</span><span class="opt-name">Singapore</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','au')"><span class="opt-flag"></span><span class="opt-code">AU</span><span class="opt-name">Australia</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','gb')"><span class="opt-flag"></span><span class="opt-code">GB</span><span class="opt-name">United Kingdom</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','ae')"><span class="opt-flag"></span><span class="opt-code">AE</span><span class="opt-name">Dubai / UAE</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','my')"><span class="opt-flag"></span><span class="opt-code">MY</span><span class="opt-name">Malaysia</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','kr')"><span class="opt-flag"></span><span class="opt-code">KR</span><span class="opt-name">South Korea</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','mt')"><span class="opt-flag"></span><span class="opt-code">MT</span><span class="opt-name">Malta</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','cz')"><span class="opt-flag"></span><span class="opt-code">CZ</span><span class="opt-name">Czech Republic</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','hr')"><span class="opt-flag"></span><span class="opt-code">HR</span><span class="opt-name">Croatia</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','mu')"><span class="opt-flag"></span><span class="opt-code">MU</span><span class="opt-name">Mauritius</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','lv')"><span class="opt-flag"></span><span class="opt-code">LV</span><span class="opt-name">Latvia</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','de')"><span class="opt-flag"></span><span class="opt-code">DE</span><span class="opt-name">Germany</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'dest','best')" style="grid-column:span 3"><span class="opt-icon">&#127757;</span><span class="opt-label">Show me best options</span><span class="opt-sub">We'll recommend based on your profile</span></button>
+    </div>
+    <div class="q-nav"><div></div><button class="btn-next" id="next1" disabled onclick="goTo(2)">Continue &rarr;</button></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="q2" style="display:none">
+    <div class="q-num">02</div>
+    <h2>What type of course are you looking for?</h2>
+    <p class="q-sub">We have options from 3 months to 2 years. All levels welcome.</p>
+    <div class="options-grid">
+      <button class="opt-btn" onclick="selectOpt(this,'course','biz')"><span class="opt-icon">&#128188;</span><span class="opt-label">Business & Management</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','it')"><span class="opt-icon">&#128187;</span><span class="opt-label">IT & Computing</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','eng')"><span class="opt-icon">&#128483;&#65039;</span><span class="opt-label">English Language</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','hosp')"><span class="opt-icon">&#127976;</span><span class="opt-label">Hospitality & Tourism</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','health')"><span class="opt-icon">&#127973;</span><span class="opt-label">Healthcare & Nursing</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','engg')"><span class="opt-icon">&#9881;&#65039;</span><span class="opt-label">Engineering & Trades</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','design')"><span class="opt-icon">&#127912;</span><span class="opt-label">Design & Media</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'course','any')" style="grid-column:span 2"><span class="opt-icon">&#11088;</span><span class="opt-label">Any &mdash; show best options</span></button>
+    </div>
+    <div class="q-nav"><button class="btn-back" onclick="goTo(1)">&larr; Back</button><button class="btn-next" id="next2" disabled onclick="goTo(3)">Continue &rarr;</button></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="q3" style="display:none">
+    <div class="q-num">03</div>
+    <h2>What is your total budget for studying abroad?</h2>
+    <p class="q-sub">Including tuition, visa, and living expenses for the first year.</p>
+    <div class="budget-grid">
+      <button class="opt-btn" onclick="selectOpt(this,'budget','ultra')"><span class="opt-icon">&#128176;</span><span class="opt-label">Under Rs 5 Lakhs</span><span class="opt-sub">Ultra Budget</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'budget','budget')"><span class="opt-icon">&#128176;</span><span class="opt-label">Rs 5&ndash;10 Lakhs</span><span class="opt-sub">Budget</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'budget','mid')"><span class="opt-icon">&#128142;</span><span class="opt-label">Rs 10&ndash;20 Lakhs</span><span class="opt-sub">Mid Range</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'budget','flex')"><span class="opt-icon">&#127942;</span><span class="opt-label">Above Rs 20 Lakhs</span><span class="opt-sub">Flexible</span></button>
+    </div>
+    <div class="q-nav"><button class="btn-back" onclick="goTo(2)">&larr; Back</button><button class="btn-next" id="next3" disabled onclick="goTo(4)">Continue &rarr;</button></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="q4" style="display:none">
+    <div class="q-num">04</div>
+    <h2>What is your highest qualification?</h2>
+    <p class="q-sub">Many colleges accept 10th pass. Gaps are accepted in most countries.</p>
+    <div class="options-grid">
+      <button class="opt-btn" onclick="selectOpt(this,'qual','10th')"><span class="opt-icon">&#128203;</span><span class="opt-label">10th Pass</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'qual','12th')"><span class="opt-icon">&#127891;</span><span class="opt-label">12th Pass</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'qual','dip')"><span class="opt-icon">&#128220;</span><span class="opt-label">Diploma / ITI</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'qual','grad')"><span class="opt-icon">&#127941;</span><span class="opt-label">Graduate / Degree</span></button>
+      <button class="opt-btn" onclick="selectOpt(this,'qual','pg')"><span class="opt-icon">&#128300;</span><span class="opt-label">Post Graduate</span></button>
+    </div>
+    <div class="q-nav"><button class="btn-back" onclick="goTo(3)">&larr; Back</button><button class="btn-next" id="next4" disabled onclick="showResults()">Find My Courses &#10022;</button></div>
+  </div>
+
+  <!-- LOADING -->
+  <div class="loading-card" id="loadingCard">
+    <h3>&#127757; Finding your best options...</h3>
+    <p>Matching courses with high visa approval rates for Indian students</p>
+    <ul class="load-steps" id="loadSteps">
+      <li>Checking visa approval rates for your destination</li>
+      <li>Matching courses to your qualification</li>
+      <li>Filtering by your budget in INR</li>
+      <li>Checking IELTS waiver availability</li>
+      <li>Preparing your personalised shortlist</li>
+    </ul>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-card" id="resultsCard">
+    <h2>Your Best Course Matches</h2>
+    <p>Ranked by visa approval rate and value for money</p>
+    <div id="resultsList"></div>
+    <div class="counsel-box">
+      <h3>Book Your Free Counselling Session</h3>
+      <p>Our counsellors will verify your eligibility, help with documentation, and guide you through the entire visa process &mdash; completely free.</p>
+      <div class="counsel-form">
+        <input type="tel" id="phoneInput" placeholder="Your WhatsApp number">
+        <button class="btn btn-blue btn-sm" onclick="submitCounsel()" style="white-space:nowrap;">Get Free Counselling &rarr;</button>
+      </div>
+      <div class="success-note" id="counselSuccess">&#10003; Submitted! A counsellor will call you within 2 hours.</div>
+    </div>
+    <button class="restart-btn" onclick="restart()">&larr; Start Over</button>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a href="/" class="ft-logo"><img src="/images/imak-logo.png" alt="IMAK Overseas Education" style="height:36px;width:auto;object-fit:contain;margin-bottom:0.7rem;"></a>
+      <p>Hyderabad's trusted overseas education consultancy. We help Indian students find the right course, college, and country for their goals and budget.</p>
+      <div class="ft-contact">
+        <a href="tel:+919000171849">&#128222; +91 90001 71849</a>
+        <a href="mailto:info@imakinc.com" style="color:#4db8ff;text-decoration:none;">&#9993;&#65039; info@imakinc.com</a>
+        <a>&#128205; East Marredpally, Secunderabad &ndash; 500026</a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Tools</h4>
+      <a href="/university-finder.html">University Finder</a>
+      <a href="/course-finder">Course Finder</a>
+      <a href="/book-an-appointment">Book Counselling</a>
+    </div>
+    <div class="ft-col"><h4>Destinations</h4>
+      <a href="/study-in-singapore">Singapore</a>
+      <a href="/study-in-malaysia">Malaysia</a>
+      <a href="/study-in-malta">Malta</a>
+      <a href="/mbbs-in-georgia">MBBS Georgia</a>
+      <a href="/mbbs-in-kyrgyzstan">MBBS Kyrgyzstan</a>
+    </div>
+    <div class="ft-col"><h4>Company</h4>
+      <a href="/about-us">About Us</a>
+      <a href="/our-services">Our Services</a>
+      <a href="/destinations">All Destinations</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact-us">Contact Us</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>&copy; 2026 IMAK Overseas Education, Hyderabad. All rights reserved.</span>
+    <span>Visa approvals are subject to respective immigration authorities.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var p=window.location.pathname.replace(/^\/|\.html$/g,'').split('/').pop();
+  document.querySelectorAll('.nav-links a[data-p]').forEach(function(a){
+    if(a.getAttribute('data-p')===p)a.classList.add('active');
+  });
+})();
+</script>
+
+<script>
+var answers = {};
+var courseDB = {
+  sg: {
+    biz: [{"name":"Diploma in Business Management","school":"Dimensions International College, Singapore","detail":"12-month diploma, No IELTS, part-time work permitted. Globally recognised qualification.","tags":["No IELTS","From ₹3.5L","Part-time work OK"]},{"name":"Advanced Diploma in Business","school":"Kaplan Singapore","detail":"18-month programme. Entry with 12th pass. Strong career outcomes in Singapore's business sector.","tags":["No IELTS","From ₹5L","18 months"]}],
+    it: [{"name":"Diploma in Information Technology","school":"MDIS Singapore","detail":"12-month IT diploma. No IELTS required. Covers programming, networking, and cybersecurity basics.","tags":["No IELTS","From ₹4L","12 months"]}],
+    hosp: [{"name":"Diploma in Hospitality Management","school":"At-Sunrice GlobalChef Academy","detail":"World-renowned culinary and hospitality school. Placement assistance. Part-time work allowed.","tags":["No IELTS","From ₹4.5L","Part-time work OK"]}],
+    any: [{"name":"Diploma in Business Management","school":"Dimensions International College, Singapore","detail":"Most popular course for Indian students. No IELTS, part-time work, affordable fees.","tags":["No IELTS","From ₹3.5L","⭐ Best Value"]},{"name":"Diploma in IT","school":"MDIS Singapore","detail":"Strong tech programme with good job placement rates in Singapore.","tags":["No IELTS","From ₹4L","High Demand"]}]
+  },
+  my: {
+    biz: [{"name":"Bachelor of Business Administration","school":"Taylor's University, Malaysia","detail":"3-year degree, globally ranked, No IELTS for most Indian students with MOI.","tags":["MOI Accepted","From ₹2.8L/yr","3 Years"]},{"name":"Diploma in Business","school":"Sunway College, Malaysia","detail":"1.5-year diploma leading to degree top-up. Affordable and well-recognised.","tags":["No IELTS","From ₹2.2L/yr","1.5 Years"]}],
+    any: [{"name":"Bachelor of Business Administration","school":"Taylor's University, Malaysia","detail":"Globally ranked, affordable fees, No IELTS with MOI certificate.","tags":["MOI Accepted","From ₹2.8L/yr","⭐ Recommended"]}]
+  },
+  ae: {
+    biz: [{"name":"Bachelor of Business Management","school":"Canadian University Dubai","detail":"North American style education in Dubai. No IELTS with MOI. Close to India.","tags":["No IELTS","From ₹5L/yr","Dubai Campus"]},{"name":"Diploma in Business","school":"Manipal University Dubai","detail":"Familiar brand, strong alumni network, No IELTS option available.","tags":["No IELTS","From ₹4.5L/yr","Manipal Brand"]}],
+    any: [{"name":"Bachelor of Business Management","school":"Canadian University Dubai","detail":"North American style education in Dubai. No IELTS. Close to India.","tags":["No IELTS","From ₹5L/yr","⭐ Popular"]}]
+  },
+  mt: {
+    any: [{"name":"Diploma in Business","school":"MCAST Malta","detail":"EU country, English official language, 10th pass accepted for some programmes. Low cost.","tags":["EU Country","From ₹3L/yr","10th Pass OK"]},{"name":"English Language Course","school":"Malta Language School","detail":"Short-term English programmes in an EU country. Pathway to further study.","tags":["EU Country","From ₹2L","Short Term"]}]
+  },
+  best: {
+    any: [{"name":"Diploma in Business Management","school":"Dimensions International College, Singapore","detail":"Our most popular placement. No IELTS, part-time work, affordable, excellent outcomes.","tags":["No IELTS","From ₹3.5L","⭐ Most Popular"]},{"name":"Bachelor of Business","school":"Taylor's University, Malaysia","detail":"Best value degree programme. Globally ranked, close to India, No IELTS with MOI.","tags":["MOI Accepted","From ₹2.8L/yr","Best Value"]},{"name":"Diploma in IT","school":"MDIS Singapore","detail":"Strong tech programme for IT students. No IELTS, part-time work in Singapore allowed.","tags":["No IELTS","From ₹4L","Tech Focus"]}]
+  }
+};
+
+function selectOpt(btn, key, val) {
+  var grid = btn.closest('.options-grid,.budget-grid');
+  grid.querySelectorAll('.opt-btn').forEach(function(b){ b.classList.remove('selected'); });
+  btn.classList.add('selected');
+  answers[key] = val;
+  var nextBtns = {'dest':'next1','course':'next2','budget':'next3','qual':'next4'};
+  var nb = document.getElementById(nextBtns[key]);
+  if(nb) nb.disabled = false;
+}
+
+function goTo(n) {
+  [1,2,3,4].forEach(function(i){ document.getElementById('q'+i).style.display='none'; });
+  document.getElementById('q'+n).style.display='block';
+  var pct = n*25;
+  document.getElementById('progressFill').style.width = pct+'%';
+  document.getElementById('qLabel').textContent = 'Question '+n+' of 4';
+  document.getElementById('qPct').textContent = pct+'%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showResults() {
+  [1,2,3,4].forEach(function(i){ document.getElementById('q'+i).style.display='none'; });
+  document.getElementById('progressWrap').style.display='none';
+  document.getElementById('loadingCard').style.display='block';
+  var steps = document.getElementById('loadSteps').children;
+  var i=0;
+  var iv = setInterval(function(){
+    if(i<steps.length){ steps[i].classList.add('done'); i++; }
+    else {
+      clearInterval(iv);
+      setTimeout(function(){
+        document.getElementById('loadingCard').style.display='none';
+        buildResults();
+        document.getElementById('resultsCard').style.display='block';
+      }, 400);
+    }
+  }, 500);
+}
+
+function buildResults() {
+  var dest = answers.dest||'best';
+  var course = answers.course||'any';
+  var db = courseDB[dest]||courseDB['best'];
+  var results = db[course]||db['any']||courseDB['best']['any'];
+  var html='';
+  results.forEach(function(r){
+    html += '<div class="result-item">';
+    html += '<div class="result-head"><div class="result-name">'+r.name+'</div><span class="result-badge">High Visa Rate</span></div>';
+    html += '<div class="result-detail"><strong style="color:var(--blue-b);font-size:0.78rem;">'+r.school+'</strong><br>'+r.detail+'</div>';
+    html += '<div class="result-tags">';
+    r.tags.forEach(function(t){ html+='<span class="tag">'+t+'</span>'; });
+    html += '</div></div>';
+  });
+  document.getElementById('resultsList').innerHTML = html;
+}
+
+function submitCounsel() {
+  var ph = document.getElementById('phoneInput').value.trim();
+  if(!ph){ document.getElementById('phoneInput').style.borderColor='#f87171'; return; }
+  if(!imakCourseFinderLead(ph)) return;
+  document.getElementById('counselSuccess').style.display='block';
+  document.getElementById('phoneInput').value='';
+}
+
+function restart() {
+  answers={};
+  document.getElementById('resultsCard').style.display='none';
+  document.getElementById('progressWrap').style.display='block';
+  [1,2,3,4].forEach(function(i){
+    var q=document.getElementById('q'+i);
+    q.querySelectorAll('.opt-btn').forEach(function(b){ b.classList.remove('selected'); });
+    var nb=document.getElementById('next'+i);
+    if(nb)nb.disabled=true;
+  });
+  document.getElementById('q1').style.display='block';
+  document.getElementById('progressFill').style.width='25%';
+  document.getElementById('qLabel').textContent='Question 1 of 4';
+  document.getElementById('qPct').textContent='25%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+<script src="/whatsapp-leads.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script src="/imak-float-contact.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

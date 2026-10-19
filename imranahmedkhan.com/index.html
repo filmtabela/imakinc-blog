@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imran Ahmed Khan — Overseas Education · Screenwriting</title>
+  <meta name="description" content="Imran Ahmed Khan. Director of IMAK Overseas Education, Hyderabad. Placing Indian students in universities across the US, UK, Australia, Canada and Europe. Feature screenwriter with films in development." />
+  <meta property="og:title" content="Imran Ahmed Khan" />
+  <meta property="og:description" content="Director, IMAK Overseas Education. Feature screenwriter. Hyderabad." />
+  <meta property="og:url" content="https://imranahmedkhan.com/" />
+  <link rel="canonical" href="https://imranahmedkhan.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy: #08101E;
+      --navy-mid: #0d1a2e;
+      --navy-light: #112240;
+      --gold: #C9A84C;
+      --gold-light: #e0c27a;
+      --white: #F5F0E8;
+      --muted: #8892a4;
+      --accent: #197CC0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(8,16,30,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-wa {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.45rem 1.1rem;
+      transition: all 0.2s;
+    }
+
+    .nav-wa:hover { background: var(--gold); color: var(--navy); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 3rem 4rem;
+      gap: 4rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(25,124,192,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-text { z-index: 1; }
+
+    .hero-location {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .hero-location::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: rgba(245,240,232,0.7);
+      max-width: 480px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid rgba(136,146,164,0.3);
+      padding: 0.3rem 0.8rem;
+    }
+
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--gold-light); }
+
+    .btn-secondary {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(245,240,232,0.3);
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-est {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(136,146,164,0.4);
+      margin-top: 3rem;
+    }
+
+    .hero-image {
+      position: relative;
+      height: 75vh;
+      min-height: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, transparent 30%),
+                  linear-gradient(to top, var(--navy) 0%, transparent 20%);
+    }
+
+    /* VENTURES TICKER */
+    .ventures-bar {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: 0.9rem 3rem;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      overflow: hidden;
+    }
+
+    .ventures-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .ventures-list {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .ventures-list a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .ventures-list a:hover { color: var(--gold); }
+
+    .ventures-sep { color: rgba(201,168,76,0.3); font-size: 0.8rem; }
+
+    /* SECTIONS */
+    section { padding: 6rem 3rem; }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: 3.5rem;
+      max-width: 600px;
+    }
+
+    .section-heading em { font-style: italic; color: var(--gold-light); }
+
+    /* WHAT I DO */
+    #what-i-do { background: var(--navy-mid); }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5px;
+    }
+
+    .card {
+      background: var(--navy-light);
+      padding: 2.5rem;
+      border-top: 1px solid rgba(201,168,76,0.15);
+      transition: background 0.2s;
+    }
+
+    .card:hover { background: rgba(25,124,192,0.06); }
+
+    .card-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: rgba(245,240,232,0.65);
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+    }
+
+    .card-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .card-link:hover { color: var(--gold-light); }
+
+    /* CURRENTLY */
+    #currently { background: var(--navy-mid); }
+    .now-list { border-top: 1px solid rgba(201,168,76,0.2); max-width: 900px; }
+    .now-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+      align-items: baseline;
+    }
+    .now-key {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .now-row p { font-size: 1.15rem; color: rgba(245,240,232,0.8); line-height: 1.6; }
+    .now-row p a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.35); }
+    .now-row p a:hover { border-bottom-color: var(--gold); }
+    .card-status {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid rgba(136,146,164,0.3);
+      padding: 0.25rem 0.7rem;
+      display: inline-block;
+    }
+
+    /* ABOUT */
+    #about {
+      background: var(--navy);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-image {
+      position: relative;
+      height: 70vh;
+      min-height: 500px;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to left, transparent 60%, var(--navy) 100%);
+    }
+
+    .about-text { padding-top: 1rem; }
+
+    .about-text p {
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.75);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+
+    .about-facts {
+      margin-top: 2rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding-top: 2rem;
+    }
+
+    .fact {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-bottom: 0.8rem;
+    }
+
+    .fact-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .fact p { font-size: 0.95rem !important; margin-bottom: 0 !important; }
+
+    /* CONNECT */
+    #connect { background: var(--navy-mid); }
+
+    .connect-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .connect-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .connect-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(201,168,76,0.15);
+      text-decoration: none;
+      color: var(--white);
+      transition: all 0.2s;
+      font-size: 1rem;
+    }
+
+    .connect-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+
+    .connect-link-icon { font-size: 1.1rem; width: 28px; text-align: center; }
+
+    .connect-link-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* FORM */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .form-group label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--navy-light);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: var(--white);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+
+    .form-group select option { background: var(--navy-mid); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 0.9rem 2.5rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+
+    .form-submit:hover { background: var(--gold-light); }
+    .form-note { font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--muted); margin-top: 0.5rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--muted); letter-spacing: 0.06em; }
+
+    .footer-links { display: flex; gap: 2rem; flex-wrap: wrap; }
+
+    .footer-links a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; gap: 2rem; }
+      .hero-image { height: 50vh; min-height: 300px; }
+      section { padding: 4rem 1.5rem; }
+      .now-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      #about, .connect-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .ventures-bar { padding: 0.9rem 1.5rem; }
+      footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Imran <span style="color:var(--gold)">Ahmed</span> Khan</a>
+    <ul class="nav-links">
+      <li><a href="#what-i-do">Work</a></li>
+      <li><a href="#currently">Currently</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a href="https://wa.me/919000171849" class="nav-wa" target="_blank">WhatsApp</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-location">Hyderabad · India</div>
+      <h1>Imran<br><em>Ahmed</em><br>Khan</h1>
+      <p class="hero-sub">Director of IMAK Overseas Education. Close to ten years in international education — today I place Indian students in universities across the US, UK, Australia, Canada and Europe. I also write feature films.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">International Education</span>
+        <span class="hero-tag">Feature Film</span>
+        <span class="hero-tag">Screenwriting</span>
+        <span class="hero-tag">Hyderabad</span>
+      </div>
+      <div class="hero-ctas">
+        <a href="#connect" class="btn-primary">Get in Touch</a>
+        <a href="https://imakinc.com" class="btn-secondary" target="_blank">IMAK Overseas →</a>
+      </div>
+      <div class="hero-est">est. Hyderabad</div>
+    </div>
+    <div class="hero-image">
+      <img src="photo-hero.jpg" alt="Imran Ahmed Khan" />
+    </div>
+  </section>
+
+  <!-- VENTURES BAR -->
+  <div class="ventures-bar">
+    <span class="ventures-label">Ventures</span>
+    <div class="ventures-list">
+      <a href="https://imakinc.com" target="_blank">IMAK Overseas</a>
+      <span class="ventures-sep">·</span>
+      <a href="https://blog.imranahmedkhan.com" target="_blank">The Blog</a>
+    </div>
+  </div>
+
+  <!-- WHAT I DO -->
+  <section id="what-i-do">
+    <div class="section-label">What I Do</div>
+    <h2 class="section-heading">Two pillars.<br><em>One instinct.</em></h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-num">01 — Education</div>
+        <h3>Overseas Education</h3>
+        <p>Close to ten years marketing international education for overseas institutions across the Middle East and Southeast Asia. That work became IMAK Overseas Education — admissions, visa guidance and placement for Indian students heading to the US, UK, Australia, Canada and Europe, end to end.</p>
+        <a href="https://imakinc.com" class="card-link" target="_blank">IMAK Overseas ↗</a>
+      </div>
+      <div class="card">
+        <div class="card-num">02 — Film</div>
+        <h3>Screenwriting</h3>
+        <p>Feature screenplays, registered with the Screenwriters Association. Crime, character and the machinery of power — several features in development, in Hindi and regional cinema.</p>
+        <span class="card-status">In development</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENTLY -->
+  <section id="currently">
+    <div class="section-label">Currently</div>
+    <h2 class="section-heading">What's on<br><em>the desk.</em></h2>
+    <div class="now-list">
+      <div class="now-row">
+        <div class="now-key">Education</div>
+        <p>Admissions open for the 2027 intakes — placing students across Australia, the UK, Canada and Europe through <a href="https://imakinc.com" target="_blank">IMAK Overseas</a>.</p>
+      </div>
+      <div class="now-row">
+        <div class="now-key">Film</div>
+        <p>Several feature screenplays in development across crime and thriller. One is being taken to lead talent.</p>
+      </div>
+      <div class="now-row">
+        <div class="now-key">Open to</div>
+        <p>Institution partnerships, sub-agent appointments across India, and conversations with producers. <a href="#connect">Get in touch</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-image">
+      <img src="photo-about.jpg" alt="Imran Ahmed Khan" />
+    </div>
+    <div class="about-text">
+      <div class="section-label">About</div>
+      <p>A career built across international education, media and film, held together by one instinct: getting people from where they are to where they want to be.</p>
+      <p>Imran Ahmed Khan spent close to a decade marketing international education for Australian colleges across the Middle East and Southeast Asia. That work became IMAK Overseas Education — a Hyderabad consultancy placing Indian students in universities across the US, UK, Australia, Canada and Europe.</p>
+      <p>He started in film and theatre, and never left it. He writes feature screenplays, registered with the Screenwriters Association, and the storytelling shows up everywhere else — in how he interviews, how he presents, how he builds an audience.</p>
+      <p>Today he runs IMAK and writes.</p>
+      <div class="about-facts">
+        <div class="fact"><div class="fact-dot"></div><p>Hyderabad-based, internationally experienced</p></div>
+        <div class="fact"><div class="fact-dot"></div><p>~10 years marketing international education across Asia &amp; the Middle East</p></div>
+        <div class="fact"><div class="fact-dot"></div><p>Feature screenwriter — registered with the Screenwriters Association</p></div>
+        <div class="fact"><div class="fact-dot"></div><p>Social work since 2007 — minority and Dalit communities</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="section-label">Connect</div>
+    <h2 class="section-heading" style="margin-bottom:3rem;">Let's<br><em>talk.</em></h2>
+    <div class="connect-grid">
+      <div>
+        <p style="font-size:1.1rem;color:rgba(245,240,232,0.7);margin-bottom:2rem;line-height:1.75;">Institutions, agents, students, producers — or something that doesn't fit neatly into a category. Reach out. Direct communication is preferred.</p>
+        <div class="connect-links">
+          <a href="https://wa.me/919000171849" class="connect-link" target="_blank">
+            <span class="connect-link-icon">💬</span>
+            <div><div class="connect-link-label">WhatsApp</div>+91 90001 71849</div>
+          </a>
+          <a href="mailto:contact@imranahmedkhan.com" class="connect-link">
+            <span class="connect-link-icon">✉</span>
+            <div><div class="connect-link-label">Email</div>contact@imranahmedkhan.com</div>
+          </a>
+          <a href="https://www.instagram.com/iamimranakhan/" class="connect-link" target="_blank">
+            <span class="connect-link-icon">◈</span>
+            <div><div class="connect-link-label">Instagram</div>@iamimranakhan</div>
+          </a>
+          <a href="https://blog.imranahmedkhan.com" class="connect-link" target="_blank">
+            <span class="connect-link-icon">✍</span>
+            <div><div class="connect-link-label">Blog</div>blog.imranahmedkhan.com</div>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xeedagpq" method="POST" id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required placeholder="Full name" />
+          </div>
+          <div class="form-group">
+            <label for="contact">Email or WhatsApp</label>
+            <input type="text" id="contact" name="contact" required placeholder="How to reach you" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="purpose">Purpose</label>
+          <select id="purpose" name="purpose">
+            <option value="">Select a reason</option>
+            <option value="Student Admission">Student admission</option>
+            <option value="Institution Partnership">Institution partnership</option>
+            <option value="Agent Appointment">Agent appointment</option>
+            <option value="Media">Media</option>
+            <option value="Film">Film</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="What's on your mind..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+        <p class="form-note" id="form-status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-copy">Imran Ahmed Khan © 2026 — All rights reserved</div>
+    <div class="footer-links">
+      <a href="https://imakinc.com" target="_blank">IMAK Overseas</a>
+      <a href="https://blog.imranahmedkhan.com" target="_blank">The Blog</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.textContent = 'Message received. Will be in touch shortly.';
+          status.style.color = '#C9A84C';
+          form.reset();
+        } else {
+          status.textContent = 'Something went wrong. Please try WhatsApp instead.';
+          status.style.color = '#888';
+        }
+      } catch {
+        status.textContent = 'Network error. Please try WhatsApp instead.';
+        status.style.color = '#888';
+      }
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    });
+
+    window.addEventListener('scroll', function() {
+      const nav = document.querySelector('nav');
+      nav.style.borderBottomColor = window.scrollY > 50
+        ? 'rgba(201,168,76,0.25)'
+        : 'rgba(201,168,76,0.12)';
+    });
+  </script>
+</body>
+</html>

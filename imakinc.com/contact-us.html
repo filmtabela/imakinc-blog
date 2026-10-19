@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact Us | IMAK Overseas Education | Hyderabad</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#08101E;--navy-mid:#0D1B2E;--navy-card:#102038;--navy-light:#163050;
+  --border:rgba(25,124,192,0.16);--blue:#197CC0;--blue-b:#2290D8;--blue-g:rgba(25,124,192,0.11);
+  --white:#FFFFFF;--text:#D8E8F4;--muted:#7DA4BF;--green:#22C55E;
+}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(8,16,30,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:66px;}
+.nav-logo{display:flex;align-items:center;gap:0.55rem;text-decoration:none;flex-shrink:0;}
+.nav-logo svg{width:32px;height:32px;}
+.logo-text{font-size:1.05rem;font-weight:800;color:var(--white);letter-spacing:-0.02em;line-height:1;}
+.logo-text span{color:var(--blue-b);}
+.nav-links{display:flex;align-items:center;gap:0.1rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;padding:0.42rem 0.65rem;border-radius:6px;transition:all 0.2s;white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{color:var(--white);background:var(--navy-light);}
+.nav-call{color:var(--blue-b)!important;font-weight:700!important;}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:0.42rem 1rem!important;border-radius:7px!important;font-weight:700!important;}
+.nav-cta:hover{background:var(--blue-b)!important;}
+.mob-cta{display:none;gap:0.5rem;}
+@media(max-width:960px){.nav-links{display:none;}.mob-cta{display:flex;}}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 60%,#091525 100%);padding:5rem 2rem 4rem;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 0%,rgba(25,124,192,0.12) 0%,transparent 70%);}
+.badge{position:relative;display:inline-flex;align-items:center;gap:0.45rem;background:rgba(25,124,192,0.1);border:1px solid rgba(25,124,192,0.28);color:var(--blue-b);font-size:0.72rem;font-weight:700;padding:0.3rem 0.9rem;border-radius:100px;margin-bottom:1.4rem;letter-spacing:0.06em;text-transform:uppercase;}
+.hero h1{position:relative;font-size:clamp(2.1rem,5vw,3.5rem);font-weight:800;color:var(--white);line-height:1.08;letter-spacing:-0.03em;margin-bottom:1rem;}
+.hero h1 em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.hero p{position:relative;font-size:1rem;color:var(--muted);max-width:560px;margin:0 auto 2rem;}
+
+/* LAYOUT */
+section{padding:5rem 2rem;}.container{max-width:1200px;margin:0 auto;}
+.s-label{font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--blue-b);margin-bottom:0.55rem;}
+.s-title{font-size:clamp(1.75rem,4vw,2.6rem);font-weight:800;color:var(--white);line-height:1.12;letter-spacing:-0.025em;margin-bottom:0.9rem;}
+.s-title em{font-style:italic;color:var(--blue-b);font-family:'Lora',serif;}
+.s-sub{font-size:0.95rem;color:var(--muted);max-width:560px;line-height:1.7;}
+.alt{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+
+/* CARD */
+.card{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;transition:border-color 0.22s,transform 0.22s;}
+.card:hover{border-color:rgba(25,124,192,0.38);transform:translateY(-3px);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.82rem 1.8rem;border-radius:9px;font-weight:700;font-size:0.88rem;text-decoration:none;border:none;cursor:pointer;transition:all 0.2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-blue{background:var(--blue);color:var(--white);}.btn-blue:hover{background:var(--blue-b);transform:translateY(-2px);}
+.btn-out{background:transparent;color:var(--white);border:1px solid var(--border);}.btn-out:hover{border-color:var(--blue-b);color:var(--blue-b);}
+.btn-sm{padding:0.45rem 0.9rem;font-size:0.8rem;border-radius:7px;}
+.btn-group{display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+/* TAG */
+.tag{font-size:0.66rem;font-weight:700;padding:0.2rem 0.52rem;border-radius:100px;background:rgba(25,124,192,0.09);border:1px solid rgba(25,124,192,0.2);color:var(--blue-b);letter-spacing:0.03em;}
+
+/* FORM */
+.fg{margin-bottom:1.1rem;}
+.fg label{display:block;font-size:0.7rem;font-weight:700;color:var(--muted);margin-bottom:0.42rem;letter-spacing:0.06em;text-transform:uppercase;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(8,16,30,0.8);border:1px solid var(--border);color:var(--white);font-family:'Plus Jakarta Sans',sans-serif;font-size:0.875rem;padding:0.72rem 0.95rem;border-radius:9px;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue-b);box-shadow:0 0 0 3px rgba(25,124,192,0.09);}
+.fg select option{background:var(--navy-mid);}
+.fg textarea{resize:vertical;min-height:100px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+@media(max-width:500px){.f-row{grid-template-columns:1fr;}}
+
+/* CTA BOX */
+.cta-box{background:var(--navy-card);border:1px solid var(--border);border-radius:18px;padding:3.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;max-width:680px;margin:0 auto;}
+.cta-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 55% at 50% 0%,var(--blue-g) 0%,transparent 70%);}
+.cta-box h2{position:relative;font-size:clamp(1.4rem,3.5vw,2rem);font-weight:800;color:var(--white);margin-bottom:0.7rem;}
+.cta-box p{position:relative;color:var(--muted);margin-bottom:1.75rem;font-size:0.9rem;}
+.cta-box .btn-group{position:relative;justify-content:center;}
+
+/* FOOTER */
+footer{background:#050D18;border-top:1px solid var(--border);padding:3rem 2rem 1.5rem;}
+.ft-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.ft-logo{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.7rem;text-decoration:none;}
+.ft-logo svg{width:28px;height:28px;}
+.ft-logo .logo-text{font-size:0.95rem;}
+.ft-brand p{font-size:0.8rem;color:var(--muted);line-height:1.7;margin-bottom:0.9rem;}
+.ft-contact a{display:flex;align-items:center;gap:0.45rem;color:#4db8ff;text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;font-weight:600;}
+.ft-contact a:hover{color:#ffffff;}
+.ft-col h4{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.85rem;}
+.ft-col a{display:block;color:var(--muted);text-decoration:none;font-size:0.8rem;margin-bottom:0.42rem;transition:color 0.2s;}
+.ft-col a:hover{color:var(--white);}
+.ft-bottom{max-width:1200px;margin:1.25rem auto 0;display:flex;justify-content:space-between;align-items:center;font-size:0.72rem;color:var(--muted);}
+@media(max-width:768px){.ft-inner{grid-template-columns:1fr 1fr;gap:1.75rem;}.ft-bottom{flex-direction:column;gap:0.35rem;text-align:center;}}
+@media(max-width:480px){.ft-inner{grid-template-columns:1fr;}}
+
+  
+
+
+  /* ===== NAV STYLES v3 ===== */
+  nav{position:sticky;top:0;z-index:1000;background:rgba(8,16,30,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .nav-logo{text-decoration:none;display:flex;align-items:center;}
+  .nav-brand{font-family:'Lora',Georgia,serif;font-size:1.4rem;font-weight:600;color:#ffffff;letter-spacing:-0.01em;}
+  .nav-brand em{font-style:italic;color:#2290D8;}
+  .nav-links{display:flex;align-items:center;gap:1.8rem;}
+  .nav-links a{color:#cbd5e1;text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:#fff;}
+  .nav-ctas{display:flex;align-items:center;gap:.75rem;}
+  .btn-call{color:#4db8ff;font-weight:600;font-size:.875rem;text-decoration:none;}
+  .btn-primary{background:#197CC0;color:#fff;padding:.55rem 1.2rem;border-radius:8px;font-weight:700;font-size:.875rem;text-decoration:none;}
+  .btn-primary:hover{background:#2290D8;}
+  @media(max-width:700px){.nav-links{display:none;}nav{padding:0 1rem;}}
+  /* ===== END NAV v3 ===== */
+
+</style>
+<style>
+.qg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.5rem;}
+.qc{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.5rem 1rem;text-align:center;text-decoration:none;color:inherit;display:block;transition:border-color .22s,transform .22s;}
+.qc:hover{border-color:rgba(25,124,192,.38);transform:translateY(-3px);}
+.qc.wa{border-color:rgba(34,197,94,.14);}.qc.wa:hover{border-color:rgba(34,197,94,.42);}
+.qi{font-size:1.75rem;margin-bottom:.75rem;}
+.qc h3{font-size:.82rem;font-weight:700;color:var(--white);margin-bottom:.25rem;}
+.qc p{font-size:.72rem;color:var(--muted);margin-bottom:.6rem;line-height:1.5;}
+.qa{font-size:.72rem;font-weight:700;color:var(--blue-b);}.qc.wa .qa{color:var(--green);}
+.cl{display:grid;grid-template-columns:1fr 1.75fr;gap:2.25rem;margin-top:2.5rem;}
+.is{display:flex;flex-direction:column;gap:1rem;}
+.ic{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:1.3rem;}
+.ic h4{font-size:.66rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.85rem;}
+.ir{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.75rem;}.ir:last-child{margin-bottom:0;}
+.ii{font-size:.95rem;flex-shrink:0;margin-top:.1rem;}
+.ir strong{display:block;font-size:.8rem;font-weight:700;color:var(--white);margin-bottom:.08rem;}
+.ir span,.ir a{font-size:.75rem;color:var(--muted);text-decoration:none;line-height:1.5;}
+.ir a:hover{color:var(--blue-b);}
+.hr{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px solid var(--border);font-size:.75rem;}
+.hr:last-child{border-bottom:none;}
+.hd{color:var(--muted);}.ht{color:var(--white);font-weight:600;}.hc{color:#f87171;}
+.fp{background:var(--navy-card);border:1px solid var(--border);border-radius:15px;padding:1.9rem;}
+.fp h3{font-size:1.05rem;font-weight:800;color:var(--white);margin-bottom:.32rem;}
+.fp>p{font-size:.8rem;color:var(--muted);margin-bottom:1.5rem;}
+.sbtn{width:100%;background:var(--blue);color:var(--white);border:none;padding:.82rem;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:.42rem;}
+.sbtn:hover{background:var(--blue-b);transform:translateY(-2px);}
+.fn{font-size:.68rem;color:var(--muted);text-align:center;margin-top:.6rem;}
+.sm2{display:none;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.22);color:#4ade80;padding:.82rem 1rem;border-radius:9px;text-align:center;font-size:.82rem;font-weight:600;margin-top:.82rem;}
+.mw{border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-top:1.75rem;height:320px;}
+.mw iframe{width:100%;height:100%;border:none;}
+@media(max-width:900px){.qg{grid-template-columns:1fr 1fr;}.cl{grid-template-columns:1fr;}}
+</style></head><body><nav>
+  <a href="/" class="nav-logo">
+    <span class="nav-brand">IMAK <em>Overseas</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="/destinations.html">Destinations</a>
+    <a href="/our-services.html">Services</a>
+    <a href="/university-finder.html">University Finder</a>
+    <a href="/course-finder.html">Courses</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about-us.html">About</a>
+    <a href="/contact-us.html">Contact</a>
+  </div>
+  <div class="nav-ctas">
+    <a href="tel:+919000171849" class="btn-call">&#128222; Call Us</a>
+    <a href="/book-an-appointment.html" class="btn-primary">Book Free Call</a>
+  </div>
+</nav>
+<section class="hero" style="background:linear-gradient(160deg,var(--navy) 0%,var(--navy-mid) 60%,#091525 100%);position:relative;overflow:hidden;"><div style="position:relative;max-width:1200px;margin:0 auto;padding:5rem 2rem 4rem;text-align:center;">
+  <div class="badge">&#128222; Same Day Reply Guaranteed</div>
+  <h1>Get in Touch<br><em>We're Here to Help</em></h1>
+  <p>Call, WhatsApp, email, or visit us in Secunderabad. Our counsellors respond within hours &mdash; never days.</p>
+</div></section>
+<section><div class="container">
+  <p class="s-label">Reach Us Instantly</p><h2 class="s-title">Choose How to <em>Connect</em></h2>
+  <div class="qg">
+    <a href="tel:+919000171849" class="qc"><div class="qi">&#128222;</div><h3>Call Us</h3><p>Speak directly with a counsellor right now</p><div class="qa">+91 90001 71849 &rarr;</div></a>
+    <a href="https://wa.me/919000171849?text=Hi%20IMAK%2C%20I%20want%20to%20enquire%20about%20studying%20abroad." class="qc wa" target="_blank"><div class="qi">&#128172;</div><h3>WhatsApp</h3><p>Message us for quick replies anytime</p><div class="qa">Chat on WhatsApp &rarr;</div></a>
+    <a href="mailto:info@imakinc.com"><div class="qi">&#9993;&#65039;</div><h3>Email Us</h3><p>Send details and we'll reply within 24 hours</p><div class="qa"><span>info@imakinc.com</span> &rarr;</div></a>
+    <a href="/book-an-appointment" class="qc"><div class="qi">&#128197;</div><h3>Book a Call</h3><p>Schedule a free 30-minute counselling session</p><div class="qa">Book Free Call &rarr;</div></a>
+  </div>
+  <div class="cl">
+    <div class="is">
+      <div class="ic"><h4>Our Office</h4>
+        <div class="ir"><div class="ii">&#128205;</div><div><strong>Address</strong><span>Flat No. 1, 2nd Floor, Sri Sai Sagar Residency, Above Kumar Driving School<br>East Marredpally, Secunderabad &ndash; 500026, Telangana</span></div></div>
+        <div class="ir"><div class="ii">&#128222;</div><div><strong>Phone</strong><a href="tel:+919000171849">+91 90001 71849</a></div></div>
+        <div class="ir"><div class="ii">&#9993;&#65039;</div><div><strong>Email</strong><a href="mailto:info@imakinc.com" style="color:#4db8ff;text-decoration:none;">info@imakinc.com</a></div></div>
+        <div class="ir"><div class="ii">&#128172;</div><div><strong>WhatsApp</strong><a href="https://wa.me/919000171849" target="_blank">+91 90001 71849</a></div></div>
+      </div>
+      <div class="ic"><h4>Office Hours</h4>
+        <div class="hr"><span class="hd">Monday &ndash; Saturday</span><span class="ht">11:00 AM &ndash; 6:00 PM</span></div>
+        <div class="hr"><span class="hd">Sunday</span><span class="hc">Closed</span></div>
+        <p style="font-size:.72rem;color:var(--muted);margin-top:.85rem;line-height:1.6;">WhatsApp is monitored outside office hours. For urgent queries, WhatsApp is fastest.</p>
+      </div>
+      <div class="ic"><h4>What to Tell Us</h4>
+        <p style="font-size:.75rem;color:var(--muted);line-height:1.7;">When you contact us, it helps to share your academic qualification, which country or course you're interested in, your approximate budget, and whether you have IELTS. Don't worry if you don't know &mdash; just say hello and we'll guide you from there.</p>
+      </div>
+    </div>
+    <div class="fp">
+      <h3>Send Us a Message</h3><p>Fill in your details and we'll get back to you within a few hours.</p>
+      <form id="cf">
+        <div class="f-row">
+          <div class="fg"><label>Your Name *</label><input type="text" placeholder="e.g. Rahul Sharma" required></div>
+          <div class="fg"><label>Phone Number *</label><input type="tel" placeholder="+91 98765 43210" required></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="yourname@gmail.com"></div>
+        <div class="f-row">
+          <div class="fg"><label>Interested In *</label><select required><option value="" disabled selected>Select...</option><option>MBBS Abroad</option><option>Undergraduate Degree</option><option>Postgraduate / Masters</option><option>Diploma / Private College</option><option>Not sure yet</option></select></div>
+          <div class="fg"><label>Preferred Country</label><select><option value="" disabled selected>Select...</option><option>Singapore</option><option>Malaysia</option><option>UK</option><option>Canada</option><option>Australia</option><option>Germany</option><option>Georgia (MBBS)</option><option>Kyrgyzstan (MBBS)</option><option>Russia (MBBS)</option><option>Philippines (MBBS)</option><option>Dubai</option><option>Malta</option><option>Not sure</option></select></div>
+        </div>
+        <div class="fg"><label>Your Message</label><textarea placeholder="Tell us about yourself &mdash; qualifications, budget, goals..."></textarea></div>
+        <button type="submit" class="sbtn">&#128232; Send Message</button>
+        <p class="fn">We reply within a few hours. Details never shared with third parties.</p>
+        <div class="sm2" id="sm2">&#9989; Message sent! We'll be in touch very soon.</div>
+      </form>
+    </div>
+  </div>
+</div></section>
+<section class="alt"><div class="container">
+  <p class="s-label">Find Us</p>
+  <h2 class="s-title" style="margin-bottom:.4rem;">Visit Our <em>Hyderabad Office</em></h2>
+  <p style="color:var(--muted);font-size:.83rem;">Flat No. 1, 2nd Floor, Sri Sai Sagar Residency, Above Kumar Driving School, East Marredpally, Secunderabad &ndash; 500026</p>
+  <div class="mw"><iframe src="https://maps.google.com/maps?q=Kumar+Driving+School+East+Marredpally+Secunderabad&output=embed" allowfullscreen loading="lazy"></iframe></div>
+</div></section>
+<section><div class="container"><div class="cta-box">
+  <h2>Prefer to Talk Right Now?</h2>
+  <p>Call us directly or book a free counselling session &mdash; same day reply guaranteed.</p>
+  <div class="btn-group"><a href="tel:+919000171849" class="btn btn-blue">&#128222; Call +91 90001 71849</a><a href="/book-an-appointment" class="btn btn-out">&#128197; Book Free Call</a></div>
+</div></div></section>
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand">
+      <a href="/" class="ft-logo"><img src="/images/imak-logo.png" alt="IMAK Overseas Education" style="height:36px;width:auto;object-fit:contain;margin-bottom:0.7rem;"></a>
+      <p>Hyderabad's trusted overseas education consultancy. We help Indian students find the right course, college, and country for their goals and budget.</p>
+      <div class="ft-contact">
+        <a href="tel:+919000171849">&#128222; +91 90001 71849</a>
+        <a href="mailto:info@imakinc.com" style="color:#4db8ff;text-decoration:none;">&#9993;&#65039; info@imakinc.com</a>
+        <a>&#128205; East Marredpally, Secunderabad &ndash; 500026</a>
+      </div>
+    </div>
+    <div class="ft-col"><h4>Tools</h4>
+      <a href="/university-finder.html">University Finder</a>
+      <a href="/course-finder">Course Finder</a>
+      <a href="/book-an-appointment">Book Counselling</a>
+    </div>
+    <div class="ft-col"><h4>Destinations</h4>
+      <a href="/study-in-singapore">Singapore</a>
+      <a href="/study-in-malaysia">Malaysia</a>
+      <a href="/study-in-malta">Malta</a>
+      <a href="/mbbs-in-georgia">MBBS Georgia</a>
+      <a href="/mbbs-in-kyrgyzstan">MBBS Kyrgyzstan</a>
+    </div>
+    <div class="ft-col"><h4>Company</h4>
+      <a href="/about-us">About Us</a>
+      <a href="/our-services">Our Services</a>
+      <a href="/destinations">All Destinations</a>
+      <a href="/blog">Blog</a>
+      <a href="/contact-us">Contact Us</a>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <span>&copy; 2026 IMAK Overseas Education, Hyderabad. All rights reserved.</span>
+    <span>Visa approvals are subject to respective immigration authorities.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var p=window.location.pathname.replace(/^\/|\.html$/g,'').split('/').pop();
+  document.querySelectorAll('.nav-links a[data-p]').forEach(function(a){
+    if(a.getAttribute('data-p')===p)a.classList.add('active');
+  });
+})();
+</script>
+<script>document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();document.getElementById('sm2').style.display='block';this.reset();setTimeout(()=>document.getElementById('sm2').style.display='none',5000);});</script>
+<script src="/imak-float-contact.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f504f8d2bc0541799a6209d707afa51d","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>
