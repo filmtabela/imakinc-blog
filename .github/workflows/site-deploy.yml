@@ -17,6 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Backup then upload
         env:
           SSH_PASS: ${{ secrets.SSH_PASS }}
@@ -25,9 +27,17 @@ jobs:
           OPTS="-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
           R=u114546712@145.79.209.26
           TS=$(date -u +%Y%m%d-%H%M%S)
+          # On push: deploy only the domains whose files changed in this push.
+          # On manual run: deploy every domain under site/.
+          if [ "${{ github.event_name }}" = "push" ]; then
+            DOMAINS=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} -- site/ | cut -d/ -f2 | sort -u)
+          else
+            DOMAINS=$(cd site && ls -d */ | tr -d /)
+          fi
+          echo "Deploying: $DOMAINS"
           cd site
-          for d in */; do
-            d=${d%/}
+          for d in $DOMAINS; do
+            [ -d "$d" ] || continue
             ROOT=domains/$d/public_html
             (cd $d && find . -type f | sed 's|^\./||' | sort) > /tmp/files-$d.txt
             echo "== $d: $(wc -l < /tmp/files-$d.txt) files"
