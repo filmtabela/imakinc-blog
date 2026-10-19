@@ -1,10 +1,6 @@
 name: Batch Publish - IMAK
 on:
-  schedule:
-    - cron: '30 2 * * *'   # 8:00 AM IST
-  push:
-    branches: [main]
-    paths: ['publish.js', '.github/workflows/publish.yml']
+  # Paused 19-Oct-2026 to cut token spend and maintenance. Run manually from the Actions tab if ever needed.
   workflow_dispatch:
 
 permissions:
