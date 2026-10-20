@@ -3,415 +3,248 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fortune Tech — We Make AI Work For Your Business</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>FTech — AI services for businesses and professionals worldwide</title>
+<meta name="description" content="FTech (Fortune Tech) helps businesses and professionals worldwide use AI: online visibility and profile management, AI chatbots, content systems and documents on demand. Pricing in USD.">
+<link rel="canonical" href="https://ftech.co.in/">
+<meta property="og:title" content="FTech — We make AI work for you">
+<meta property="og:description" content="AI visibility, chatbots, content and documents for clients worldwide. Pricing in USD.">
+<meta property="og:url" content="https://ftech.co.in/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"FTech (Fortune Tech)","url":"https://ftech.co.in/","email":"hello@ftech.co.in","telephone":"+91-40-4585-5856","address":{"@type":"PostalAddress","streetAddress":"East Marredpally","addressLocality":"Secunderabad, Hyderabad","addressCountry":"IN"},"areaServed":"Worldwide"}
+</script>
 <style>
-  :root {
-    --dark: #111312;
-    --darker: #0A0B0A;
-    --blue: #10B981;
-    --blue-dim: #10B98122;
-    --white: #F2F5F3;
-    --muted: #8A968F;
-    --border: #232825;
-    --card: #151816;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--darker); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
-  h1, h2, h3, h4, nav, .logo { font-family: 'Syne', sans-serif; }
-
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 4rem; background: rgba(10,11,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-  .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; color: var(--white); text-decoration: none; cursor: pointer; }
-  .logo span { color: var(--blue); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; letter-spacing: 0.02em; }
-  .nav-links a:hover { color: var(--white); }
-  .nav-cta { background: var(--blue); color: #fff !important; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600 !important; }
-  .nav-cta:hover { background: #34D399; color: #fff !important; }
-
-  /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; top: -200px; right: -200px; width: 700px; height: 700px; background: radial-gradient(circle, #10B98118 0%, transparent 70%); pointer-events: none; }
-  .hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 500px; height: 500px; background: radial-gradient(circle, #10B9810A 0%, transparent 70%); pointer-events: none; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--blue-dim); border: 1px solid #10B98144; color: var(--blue); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 100px; margin-bottom: 2rem; width: fit-content; }
-  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--blue); border-radius: 50%; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-  h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; max-width: 800px; margin-bottom: 1.5rem; }
-  h1 em { font-style: normal; color: var(--blue); }
-  .hero-sub { font-size: 1.15rem; color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; font-weight: 300; line-height: 1.7; }
-  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-  .btn-primary { background: var(--blue); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.02em; transition: all 0.2s; border: none; cursor: pointer; }
-  .btn-primary:hover { background: #34D399; transform: translateY(-1px); }
-  .btn-ghost { color: var(--muted); padding: 0.85rem 2rem; border-radius: 8px; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.95rem; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; border: 1px solid var(--border); }
-  .btn-ghost:hover { color: var(--white); border-color: #2E3530; }
-
-  /* TRUST BAR */
-  .trust-bar { padding: 2rem 4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--dark); display: flex; align-items: center; gap: 3rem; overflow: hidden; }
-  .trust-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap; font-weight: 600; }
-  .trust-items { display: flex; gap: 3rem; align-items: center; }
-  .trust-item { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 600; color: #3B443E; white-space: nowrap; letter-spacing: 0.05em; }
-
-  /* SECTIONS */
-  .section { padding: 6rem 4rem; }
-  .section-label { font-size: 0.75rem; color: var(--blue); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 1rem; }
-  h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
-  .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 500px; margin-bottom: 3.5rem; font-weight: 300; }
-
-  /* SERVICES */
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--border); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-  .service-card { background: var(--card); padding: 2.5rem; transition: background 0.3s; position: relative; }
-  .service-card:hover { background: #171B19; }
-  .service-icon { width: 48px; height: 48px; background: var(--blue-dim); border: 1px solid #10B98133; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1.5rem; }
-  .service-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
-  .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
-  .pricing-row { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .price-tag { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 100px; letter-spacing: 0.02em; }
-  .price-setup { background: #1D221F; color: var(--white); border: 1px solid var(--border); }
-  .price-monthly { background: var(--blue-dim); color: var(--blue); border: 1px solid #10B98133; }
-
-  /* HOW */
-  .how-section { background: var(--dark); padding: 6rem 4rem; }
-  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 3.5rem; }
-  .step-num { font-family: 'Syne', sans-serif; font-size: 3rem; font-weight: 800; color: #1D221F; line-height: 1; margin-bottom: 1rem; }
-  .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
-  .step p { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
-
-  /* WHY */
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 3.5rem; }
-  .why-points { display: flex; flex-direction: column; gap: 1.5rem; }
-  .why-point { display: flex; gap: 1rem; align-items: flex-start; }
-  .why-dot { width: 8px; height: 8px; background: var(--blue); border-radius: 50%; margin-top: 8px; flex-shrink: 0; }
-  .why-point h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; letter-spacing: -0.01em; }
-  .why-point p { color: var(--muted); font-size: 0.875rem; line-height: 1.6; }
-  .why-visual { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
-  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .stat-box { background: var(--dark); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
-  .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 0.4rem; }
-  .stat-label { color: var(--muted); font-size: 0.8rem; line-height: 1.4; }
-
-  /* BLOG SECTION */
-  .blog-section { background: var(--dark); padding: 6rem 4rem; }
-  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-  .blog-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; text-decoration: none; display: block; }
-  .blog-card:hover { border-color: var(--blue); transform: translateY(-3px); }
-  .blog-tag { font-size: 0.72rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; display: block; }
-  .blog-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 0.75rem; }
-  .blog-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.65; margin-bottom: 1rem; }
-  .blog-read { font-size: 0.82rem; font-weight: 600; color: var(--blue); }
-  .blog-view-all { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2.5rem; color: var(--muted); font-size: 0.9rem; text-decoration: none; border: 1px solid var(--border); padding: 0.7rem 1.5rem; border-radius: 8px; transition: all 0.2s; font-family: 'Syne', sans-serif; font-weight: 600; }
-  .blog-view-all:hover { color: var(--white); border-color: var(--blue); }
-
-  /* CTA */
-  .cta-section { padding: 6rem 4rem; text-align: center; position: relative; overflow: hidden; }
-  .cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, #10B98112 0%, transparent 70%); pointer-events: none; }
-  .cta-section h2 { max-width: 600px; margin: 0 auto 1.5rem; }
-  .cta-section p { color: var(--muted); max-width: 440px; margin: 0 auto 2.5rem; }
-
-  /* CONTACT */
-  .contact-section { background: var(--dark); padding: 6rem 4rem; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
-  .contact-info h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.02em; }
-  .contact-info p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.7; }
-  .contact-detail { display: flex; gap: 0.75rem; align-items: center; margin-bottom: 1rem; color: var(--muted); font-size: 0.9rem; }
-  .contact-detail span:first-child { color: var(--blue); font-size: 1.1rem; }
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-  .form-group label { font-size: 0.8rem; color: var(--muted); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
-  .form-group input, .form-group select, .form-group textarea { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.75rem 1rem; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); }
-  .form-group select { cursor: pointer; }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-
-  /* FOOTER */
-  footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-  footer p { color: var(--muted); font-size: 0.85rem; }
-  .footer-links { display: flex; gap: 2rem; }
-  .footer-links a { color: var(--muted); font-size: 0.85rem; text-decoration: none; }
-  .footer-links a:hover { color: var(--white); }
-
-  /* ANIMATIONS */
-  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { padding: 7rem 1.5rem 4rem; }
-    .section, .how-section, .blog-section, .contact-section, .cta-section { padding: 4rem 1.5rem; }
-    .services-grid { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr 1fr; }
-    .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .blog-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1rem; text-align: center; }
-    .trust-bar { padding: 1.5rem; }
-  }
+:root{--bg:#FAF7F2;--surface:#FFFFFF;--sand:#F3ECE1;--ink:#15242C;--muted:#5E6E76;--line:#E7E0D5;--teal:#0F766E;--teal-dark:#0B5A54;--teal-soft:#E2F0EC;--coral:#E76F51;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-0.01em;line-height:1.15;}
+a{color:var(--teal);}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem;}
+nav{position:sticky;top:0;z-index:50;background:rgba(250,247,242,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px;gap:1rem;}
+.logo{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:700;color:var(--ink);text-decoration:none;}
+.logo span{color:var(--teal);}
+.links a{color:var(--muted);text-decoration:none;margin-left:1.6rem;font-size:0.92rem;font-weight:500;}
+.links a:hover{color:var(--ink);}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;font-size:0.95rem;transition:transform .15s,background .15s;}
+.btn:hover{transform:translateY(-1px);}
+.btn.primary{background:var(--teal);color:#fff;}
+.btn.primary:hover{background:var(--teal-dark);}
+.btn.ghost{border:1.5px solid var(--ink);color:var(--ink);}
+.links .btn{margin-left:1.6rem;padding:9px 18px;color:#fff;}
+.hero{padding:5.5rem 0 4.5rem;background:radial-gradient(900px 420px at 85% 0%,var(--teal-soft),transparent 70%),radial-gradient(700px 360px at 0% 100%,#FBE5DC,transparent 70%);}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.8rem;font-weight:600;color:var(--teal);background:var(--surface);border:1px solid var(--line);padding:6px 14px;border-radius:999px;margin-bottom:1.6rem;}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--coral);display:inline-block;}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4rem);max-width:860px;}
+.hero h1 em{font-style:italic;color:var(--teal);}
+.hero p{font-size:1.18rem;color:var(--muted);max-width:640px;margin-top:1.4rem;}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:2.2rem;}
+.regions{margin-top:3rem;display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:0.88rem;}
+.regions b{color:var(--ink);font-weight:600;margin-right:4px;}
+.chip{background:var(--surface);border:1px solid var(--line);padding:5px 12px;border-radius:999px;}
+section{padding:5rem 0;}
+.label{font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--coral);margin-bottom:0.8rem;}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:0.8rem;}
+.sub{color:var(--muted);max-width:640px;margin-bottom:2.6rem;font-size:1.05rem;}
+.feature{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;background:var(--ink);color:#EAF1EF;border-radius:24px;padding:3rem;align-items:center;}
+.feature h3{font-size:clamp(1.6rem,3vw,2.2rem);color:#fff;}
+.feature p{color:#B9C8C4;margin:1rem 0 1.6rem;}
+.feature .tag{display:inline-block;background:var(--coral);color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:1rem;}
+.feature ul{list-style:none;}
+.feature li{padding:0.75rem 0;border-bottom:1px solid #2A3B43;display:flex;gap:12px;}
+.feature li:last-child{border-bottom:none;}
+.feature li b{color:#7DD3C0;font-family:'Fraunces',serif;font-size:1.1rem;min-width:28px;}
+.feature .btn.primary{background:#fff;color:var(--ink);}
+.feature .price{color:#fff;font-weight:600;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem;margin-top:1.5rem;}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.9rem;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;}
+.card:hover{box-shadow:0 14px 34px -18px rgba(21,36,44,.25);transform:translateY(-2px);}
+.icon{width:46px;height:46px;border-radius:12px;background:var(--teal-soft);display:grid;place-items:center;margin-bottom:1.1rem;}
+.icon svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.card h3{font-size:1.3rem;margin-bottom:0.6rem;}
+.card p{color:var(--muted);font-size:0.95rem;flex:1;}
+.cost{margin-top:1.4rem;padding-top:1.1rem;border-top:1px dashed var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.cost b{font-size:1.15rem;}
+.cost span{color:var(--muted);font-size:0.86rem;}
+.note{color:var(--muted);font-size:0.88rem;margin-top:1.4rem;}
+.alt{background:var(--sand);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.3rem;}
+.step{background:var(--surface);border-radius:18px;padding:1.6rem;border:1px solid var(--line);}
+.step .n{font-family:'Fraunces',serif;font-size:2rem;color:var(--teal);line-height:1;}
+.step h3{font-size:1.15rem;margin:0.7rem 0 0.4rem;}
+.step p{color:var(--muted);font-size:0.93rem;}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;}
+.why h3{font-size:1.2rem;margin-bottom:0.4rem;}
+.why p{color:var(--muted);font-size:0.95rem;}
+.why .bar{width:36px;height:4px;border-radius:4px;background:var(--coral);margin-bottom:1rem;}
+.blog{display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:2.2rem;}
+.blog p{color:var(--muted);max-width:560px;}
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:2.5rem;}
+.info p{color:var(--muted);margin:0.8rem 0 1.6rem;}
+.line{display:flex;gap:12px;align-items:flex-start;margin-bottom:1rem;}
+.line .icon{width:38px;height:38px;margin:0;flex:none;}
+.line .icon svg{width:18px;height:18px;}
+.line small{display:block;color:var(--muted);font-size:0.82rem;}
+.line a,.line div{color:var(--ink);text-decoration:none;font-weight:500;}
+form{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:2rem;}
+label{display:block;font-size:0.85rem;font-weight:600;margin:0 0 0.4rem;}
+input,select,textarea{width:100%;font:inherit;font-size:0.95rem;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);margin-bottom:1rem;}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal-soft);border-color:var(--teal);}
+textarea{min-height:110px;resize:vertical;}
+form .btn{border:none;cursor:pointer;width:100%;}
+form .hint{color:var(--muted);font-size:0.8rem;margin-top:0.7rem;text-align:center;}
+footer{border-top:1px solid var(--line);padding:2.2rem 0;color:var(--muted);font-size:0.88rem;}
+.foot{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+footer a{color:var(--muted);text-decoration:none;margin-left:1.2rem;}
+footer a:hover{color:var(--ink);}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;}
+.fade.in{opacity:1;transform:none;}
+@media (max-width:860px){.feature,.contact{grid-template-columns:1fr;}.feature{padding:2rem 1.4rem;}.links a:not(.btn){display:none;}.hero{padding:3.8rem 0 3.2rem;}section{padding:3.6rem 0;}footer a{margin:0 1rem 0 0;}}
+@media (prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none;}}
 </style>
 </head>
 <body>
 
-<nav>
-  <!-- FIX 1: Logo is now a link that scrolls to top -->
-  <a href="#" class="logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Fortune<span>Tech</span></a>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="#contact" class="nav-cta">Get Started</a></li>
-  </ul>
-</nav>
-
-<section class="hero" id="top">
-  <div class="hero-tag">AI-Powered Business Solutions · Hyderabad</div>
-  <h1>We make <em>AI work</em> for your business.</h1>
-  <p class="hero-sub">Fortune Tech helps Indian businesses set up AI systems that save time, cut costs, and grow revenue — without the complexity.</p>
-  <div class="hero-actions">
-    <a href="#contact" class="btn-primary">Book a Free Consultation</a>
-    <a href="#services" class="btn-ghost">See Our Services</a>
-  </div>
-</section>
-
-<div class="trust-bar">
-  <span class="trust-label">Trusted by businesses in</span>
-  <div class="trust-items">
-    <span class="trust-item">HYDERABAD</span>
-    <span class="trust-item">SECUNDERABAD</span>
-    <span class="trust-item">VIJAYAWADA</span>
-    <span class="trust-item">WARANGAL</span>
-    <span class="trust-item">VIZAG</span>
-  </div>
-</div>
-
-<section class="section" id="services">
-  <div class="section-label">What We Do</div>
-  <h2>Three services.<br>Real results.</h2>
-  <p class="section-sub">Each service is designed to run mostly on autopilot — so you get the benefit without the overhead.</p>
-  <div class="services-grid">
-    <div class="service-card fade-up">
-      <div class="service-icon">🤖</div>
-      <h3>AI Chatbot Setup</h3>
-      <p>We install an AI chatbot on your website that answers customer queries 24/7, captures leads, and books appointments — automatically. No coding, no maintenance headaches.</p>
-      <div class="pricing-row">
-        <span class="price-tag price-setup">₹20,000 Setup</span>
-        <span class="price-tag price-monthly">₹5,000/month</span>
-      </div>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">📱</div>
-      <h3>AI Content System</h3>
-      <p>We build a custom AI content engine for your business — generating social media posts, captions, and scheduled content automatically. You approve, it posts.</p>
-      <div class="pricing-row">
-        <span class="price-tag price-setup">₹15,000 Setup</span>
-        <span class="price-tag price-monthly">₹8,000/month</span>
-      </div>
-    </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">📄</div>
-      <h3>Business Documents on Demand</h3>
-      <p>Proposals, tenders, reports, presentations — AI-drafted in hours, not days. Submit a brief, receive a polished document. Unlimited requests on the monthly plan.</p>
-      <div class="pricing-row">
-        <span class="price-tag price-setup">No Setup Fee</span>
-        <span class="price-tag price-monthly">₹10,000/month</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="how-section" id="how">
-  <div class="section-label">The Process</div>
-  <h2>Simple from day one.</h2>
-  <p class="section-sub">We handle the complexity so you don't have to.</p>
-  <div class="steps">
-    <div class="step fade-up">
-      <div class="step-num">01</div>
-      <h3>Free Consultation</h3>
-      <p>We understand your business, your problems, and what you actually need — no jargon, no pressure.</p>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">02</div>
-      <h3>Custom Setup</h3>
-      <p>We build and configure your AI system specifically for your business — trained on your products, tone, and processes.</p>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">03</div>
-      <h3>Go Live</h3>
-      <p>Your system goes live within 7 days. We test everything and hand it over with full training.</p>
-    </div>
-    <div class="step fade-up">
-      <div class="step-num">04</div>
-      <h3>Ongoing Support</h3>
-      <p>Monthly retainer keeps everything updated, optimised, and running smoothly as your business grows.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="why">
-  <div class="section-label">Why Fortune Tech</div>
-  <h2>Built for Indian<br>businesses.</h2>
-  <div class="why-grid">
-    <div class="why-points">
-      <div class="why-point fade-up">
-        <div class="why-dot"></div>
-        <div>
-          <h4>No tech knowledge needed</h4>
-          <p>We handle everything end to end. You just tell us what you need and approve the output.</p>
-        </div>
-      </div>
-      <div class="why-point fade-up">
-        <div class="why-dot"></div>
-        <div>
-          <h4>Affordable Indian pricing</h4>
-          <p>Enterprise-grade AI at SME-friendly rates. No dollar billing, no hidden fees, no surprises.</p>
-        </div>
-      </div>
-      <div class="why-point fade-up">
-        <div class="why-dot"></div>
-        <div>
-          <h4>Local presence, personal service</h4>
-          <p>We're based in Hyderabad. You can call us, WhatsApp us, or meet us. Real people, real support.</p>
-        </div>
-      </div>
-      <div class="why-point fade-up">
-        <div class="why-dot"></div>
-        <div>
-          <h4>Live in 7 days</h4>
-          <p>No long implementation timelines. Most clients are live and seeing results within one week.</p>
-        </div>
-      </div>
-    </div>
-    <div class="why-visual fade-up">
-      <div class="stat-grid">
-        <div class="stat-box">
-          <div class="stat-num">80%</div>
-          <div class="stat-label">of customer queries handled automatically</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">7</div>
-          <div class="stat-label">days average time to go live</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">your business works even when you sleep</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">₹0</div>
-          <div class="stat-label">cost for initial consultation — always free</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FIX 2: BLOG SECTION -->
-<section class="blog-section" id="blog">
-  <div class="section-label">AI Insights</div>
-  <h2>From the Fortune Tech Blog</h2>
-  <p class="section-sub" style="margin-bottom:0;">Real-world AI strategies for Indian businesses — published daily.</p>
-  <div class="blog-grid" id="blogGrid">
-    <!-- Cards injected by JS from blog index -->
-    <a href="blog/small-restaurants-compete-with-zomato-swiggy-using-smart-technology.html" class="blog-card fade-up">
-      <span class="blog-tag">Technology · AI</span>
-      <h3>How Small Restaurants Can Use Technology to Compete with Zomato and Swiggy</h3>
-      <p>Independent restaurants are fighting back against aggregator dominance — here's the AI playbook that's working.</p>
-      <span class="blog-read">Read Article →</span>
-    </a>
-    <a href="blog/" class="blog-card fade-up">
-      <span class="blog-tag">AI Strategy</span>
-      <h3>New articles published every day</h3>
-      <p>Covering AI in healthcare, retail, logistics, legal, agriculture, manufacturing, and more — all written for Indian SMEs.</p>
-      <span class="blog-read">Browse All Articles →</span>
-    </a>
-    <a href="blog/" class="blog-card fade-up" style="border-style:dashed;border-color:#10B98144;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:180px;">
-      <span style="font-size:2rem;margin-bottom:1rem;">📰</span>
-      <h3 style="color:var(--blue);">30+ AI Topics Covered</h3>
-      <p>Hospitals, law firms, schools, retailers — see how AI is transforming every sector in India.</p>
-      <span class="blog-read">View Full Blog →</span>
-    </a>
-  </div>
-  <a href="blog/" class="blog-view-all">View All Articles →</a>
-</section>
-
-<section class="cta-section">
-  <div class="section-label">Ready to Start?</div>
-  <h2>Your competitors are already using AI.</h2>
-  <p>Don't get left behind. Book a free 30-minute consultation and see exactly what AI can do for your business.</p>
-  <a href="#contact" class="btn-primary">Book Free Consultation</a>
-</section>
-
-<section class="contact-section" id="contact">
-  <div class="section-label">Get In Touch</div>
-  <h2>Let's talk.</h2>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h3>Book your free consultation today.</h3>
-      <p>Tell us about your business and we'll show you exactly which AI solution fits — no obligation, no sales pressure.</p>
-      <div class="contact-detail">
-        <span>📍</span>
-        <span>East Marredpally, Secunderabad, Hyderabad</span>
-      </div>
-      <div class="contact-detail">
-        <span>☎️</span>
-        <span><a href="tel:+914045855856" style="color:var(--muted);text-decoration:none;">040 4585 5856 (Landline)</a></span>
-      </div>
-      <div class="contact-detail">
-        <span>💬</span>
-        <span><a href="https://wa.me/919000171849" style="color:var(--blue);text-decoration:none;">WhatsApp Us</a></span>
-      </div>
-    </div>
-    <div class="contact-form">
-      <div class="form-group">
-        <label>Your Name</label>
-        <input type="text" placeholder="Rahul Sharma">
-      </div>
-      <div class="form-group">
-        <label>Business Name</label>
-        <input type="text" placeholder="Your Company Pvt Ltd">
-      </div>
-      <div class="form-group">
-        <label>Phone / WhatsApp</label>
-        <input type="tel" placeholder="+91 98765 43210">
-      </div>
-      <div class="form-group">
-        <label>Service Interested In</label>
-        <select>
-          <option value="">Select a service</option>
-          <option>AI Chatbot Setup</option>
-          <option>AI Content System</option>
-          <option>Business Documents on Demand</option>
-          <option>Not sure — need advice</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Tell Us About Your Business</label>
-        <textarea placeholder="What does your business do? What problem are you trying to solve?"></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;padding:1rem;font-size:1rem;">Send Message →</button>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Fortune Tech, Hyderabad. All rights reserved.</p>
-  <div class="footer-links">
+<nav><div class="wrap nav-inner">
+  <a class="logo" href="/">Fortune<span>Tech</span></a>
+  <div class="links">
+    <a href="/ai-visibility/">AI Visibility</a>
     <a href="#services">Services</a>
-    <a href="#blog">Blog</a>
-    <a href="#contact">Contact</a>
-    <a href="https://wa.me/919000171849">WhatsApp</a>
+    <a href="#how">How it works</a>
+    <a href="/blog/">Insights</a>
+    <a class="btn primary" href="#contact">Get in touch</a>
   </div>
-</footer>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow"><i></i>AI services · Clients worldwide</span>
+  <h1>We make AI <em>work for you</em>, wherever you do business.</h1>
+  <p>FTech helps companies and professionals around the world put AI to practical use: how you appear online, how you answer customers, and how fast your content and documents get done. No jargon, no lock-in, priced in US dollars.</p>
+  <div class="btns">
+    <a class="btn primary" href="#contact">Book a free consultation</a>
+    <a class="btn ghost" href="#services">See services</a>
+  </div>
+  <div class="regions"><b>We work remotely with clients in</b>
+    <span class="chip">United Kingdom</span><span class="chip">United States</span><span class="chip">Europe</span><span class="chip">UAE &amp; Gulf</span><span class="chip">Canada</span><span class="chip">Australia</span><span class="chip">India</span>
+  </div>
+</div></header>
+
+<section id="visibility"><div class="wrap fade">
+  <div class="feature">
+    <div>
+      <span class="tag">New</span>
+      <h3>AI Visibility &amp; Profile Management</h3>
+      <p>When clients, investors or recruiters look you up, on Google, on LinkedIn, or by asking ChatGPT, what do they find? We manage all three for senior professionals and founders, every month.</p>
+      <p class="price">From $350 / month · free visibility audit</p>
+      <div class="btns" style="margin-top:1.2rem"><a class="btn primary" href="/ai-visibility/">Explore AI Visibility</a></div>
+    </div>
+    <ul>
+      <li><b>01</b><span>Search results for your name, accurate and up to date</span></li>
+      <li><b>02</b><span>A LinkedIn presence that's active, with posts you approve</span></li>
+      <li><b>03</b><span>Clear, structured information so AI assistants describe you correctly</span></li>
+      <li><b>04</b><span>A monthly written report on where you appear and what changed</span></li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="services" style="padding-top:1rem"><div class="wrap fade">
+  <div class="label">What we do</div>
+  <h2>Practical AI, set up and run for you</h2>
+  <p class="sub">Each service runs mostly on autopilot once it's live, with a person checking the work. You approve; we handle the rest.</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+      <h3>AI Chatbot Setup</h3>
+      <p>An AI assistant on your website that answers customer questions around the clock, captures leads and books appointments, trained on your own products and policies.</p>
+      <div class="cost"><b>$600 setup</b><span>+ $150 / month</span></div>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg></div>
+      <h3>AI Content System</h3>
+      <p>A content engine built around your brand voice: social posts, captions and articles drafted on a schedule. Nothing posts until you approve it.</p>
+      <div class="cost"><b>$450 setup</b><span>+ $250 / month</span></div>
+    </div>
+    <div class="card">
+      <div class="icon"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+      <h3>Business Documents on Demand</h3>
+      <p>Proposals, tenders, reports and presentations, drafted with AI and polished by an editor. Send a brief, get a finished document, usually within two working days.</p>
+      <div class="cost"><b>$300 / month</b><span>up to 10 documents</span></div>
+    </div>
+  </div>
+  <p class="note">All prices in USD. GBP, EUR and AED quotes on request. Indian clients can ask for INR pricing.</p>
+</div></section>
+
+<section class="alt" id="how"><div class="wrap fade">
+  <div class="label">How it works</div>
+  <h2>Simple from the first call</h2>
+  <p class="sub">Everything happens by email and video call, in your time zone where we can.</p>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Free consultation</h3><p>We learn what you need and tell you honestly whether AI will help. No pressure.</p></div>
+    <div class="step"><div class="n">02</div><h3>Custom setup</h3><p>We build around your business: your products, your tone, your processes.</p></div>
+    <div class="step"><div class="n">03</div><h3>Go live</h3><p>Most setups are live within about a week, tested and handed over with a walkthrough.</p></div>
+    <div class="step"><div class="n">04</div><h3>Ongoing care</h3><p>A monthly plan keeps everything updated, monitored and improving.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap fade">
+  <div class="label">Why FTech</div>
+  <h2>Small team, straight answers</h2>
+  <p class="sub">We'd rather tell you what AI can't do for you than sell you something that doesn't work.</p>
+  <div class="why">
+    <div><div class="bar"></div><h3>No tech knowledge needed</h3><p>We handle setup end to end. You tell us what you need and approve the output.</p></div>
+    <div><div class="bar"></div><h3>You approve everything</h3><p>Nothing is published or sent in your name without your sign-off.</p></div>
+    <div><div class="bar"></div><h3>Honest about results</h3><p>No guaranteed rankings, no inflated numbers. Monthly reports show what actually changed.</p></div>
+    <div><div class="bar"></div><h3>No lock-in</h3><p>Monthly plans continue month to month after a short initial term.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap fade">
+  <div class="blog">
+    <div><div class="label">Insights</div><h2 style="font-size:1.8rem">How businesses are using AI</h2><p>Articles on AI in healthcare, retail, logistics, law, education and more.</p></div>
+    <a class="btn ghost" href="/blog/">Read the blog</a>
+  </div>
+</div></section>
+
+<section class="alt" id="contact"><div class="wrap fade">
+  <div class="contact">
+    <div class="info">
+      <div class="label">Get in touch</div>
+      <h2>Let's talk about what you need</h2>
+      <p>Tell us a little about your business or your role, and we'll reply within one working day with honest next steps. The first consultation is always free.</p>
+      <div class="line"><div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div><div><small>Email</small><a href="mailto:hello@ftech.co.in">hello@ftech.co.in</a></div></div>
+      <div class="line"><div class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><div><small>Phone (landline)</small><a href="tel:+914045855856">+91 40 4585 5856</a></div></div>
+      <div class="line"><div class="icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div><div><small>Office</small><div>East Marredpally, Secunderabad, Hyderabad, India</div></div></div>
+    </div>
+    <form id="cf">
+      <label for="n">Your name</label><input id="n" required>
+      <label for="c">Company or role</label><input id="c">
+      <label for="co">Country</label><input id="co" placeholder="e.g. United Kingdom">
+      <label for="s">Interested in</label>
+      <select id="s"><option>AI Visibility &amp; Profile Management</option><option>AI Chatbot Setup</option><option>AI Content System</option><option>Business Documents on Demand</option><option>Not sure yet</option></select>
+      <label for="m">How can we help?</label><textarea id="m" required></textarea>
+      <button class="btn primary" type="submit">Send message</button>
+      <p class="hint">This opens your email app with your message ready to send to hello@ftech.co.in.</p>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap foot">
+  <div>© 2026 Fortune Tech (FTech) · Hyderabad, India · Invoicing by IMAK Inc</div>
+  <div><a href="/ai-visibility/">AI Visibility</a><a href="#services">Services</a><a href="/blog/">Blog</a><a href="#contact">Contact</a></div>
+</div></footer>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 100);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+document.getElementById('cf').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim();};
+  var body='Name: '+v('n')+'\nCompany/role: '+v('c')+'\nCountry: '+v('co')+'\nInterested in: '+v('s')+'\n\n'+v('m');
+  location.href='mailto:hello@ftech.co.in?subject='+encodeURIComponent('Enquiry: '+v('s'))+'&body='+encodeURIComponent(body);
+});
+var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:0.08}):null;
+document.querySelectorAll('.fade').forEach(function(el){io?io.observe(el):el.classList.add('in');});
 </script>
-
 </body>
 </html>
